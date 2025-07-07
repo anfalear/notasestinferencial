@@ -1,0 +1,255 @@
+\chapter{Estadística Descriptiva}\label{ch:estdescr}
+
+\section{Introducción}
+
+La estadística descriptiva constituye el fundamento sobre el cual se construye todo el edificio de la ciencia estadística. Su importancia radica en su capacidad para transformar grandes volúmenes de datos brutos en información significativa y comprensible, facilitando así la toma de decisiones informadas en campos tan diversos como la ingeniería, la medicina, el marketing y la investigación científica.
+
+Históricamente, la necesidad de organizar y resumir información ha acompañado a la humanidad desde las primeras civilizaciones. Los censos realizados en Estados Unidos desde 1790 ejemplifican esta tradición, mientras que el desarrollo teórico moderno debe mucho a la escuela matemática rusa, con figuras como P. L. Chebyshev (1821-1894) y sus discípulos A. A. Markov (1856-1922) y A. M. Lyapunov (1857-1918), quienes consolidaron la teoría de probabilidades como una ciencia matemática rigurosa.
+
+\begin{definition}[Estadística Descriptiva]
+La estadística descriptiva es la rama de la estadística que se encarga de la \textbf{recolección, organización, resumen y presentación de datos de manera informativa}, con el objetivo de facilitar su comprensión e interpretación.
+\end{definition}
+
+\section{Conceptos Fundamentales}
+
+\begin{definition}[Estadística]
+La estadística es el \textbf{arte y la ciencia de recolectar, analizar, presentar e interpretar datos} con el fin de facilitar la toma de decisiones más eficaces.
+\end{definition}
+
+\begin{definition}[Dato]
+Un dato es un \textbf{hecho, información o cifra que se recolecta, analiza y resume} para su presentación e interpretación. Representa el valor específico que toma una variable en un individuo particular de la población o muestra bajo estudio.
+\end{definition}
+
+\begin{definition}[Variable]
+Una variable es una \textbf{característica observable que puede tomar diferentes valores}. Las variables se clasifican en:
+\begin{itemize}
+    \item \textbf{Variables Cualitativas (Categóricas):} Utilizan etiquetas o nombres para identificar atributos
+    \item \textbf{Variables Cuantitativas (Numéricas):} Representan valores numéricos que indican cantidad
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Escalas de Medición]
+Las escalas de medición determinan las operaciones matemáticas válidas que pueden realizarse con los datos:
+\begin{itemize}
+    \item \textbf{Escala Nominal:} Etiquetas sin orden inherente (ej: tipo de sangre)
+    \item \textbf{Escala Ordinal:} Datos con orden jerárquico (ej: calificación de servicio)
+    \item \textbf{Escala de Intervalo:} Intervalos uniformes con punto cero arbitrario (ej: temperatura en Celsius)
+    \item \textbf{Escala de Razón:} Intervalos uniformes con punto cero absoluto (ej: peso, altura)
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Población y Muestra]
+\begin{itemize}
+    \item \textbf{Población:} El conjunto completo de todos los elementos de interés en un estudio determinado
+    \item \textbf{Muestra:} Un subconjunto representativo de la población
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+La distinción entre población y muestra es fundamental: las medidas calculadas a partir de una muestra se denominan \textbf{estadísticos muestrales}, mientras que las medidas poblacionales se conocen como \textbf{parámetros poblacionales}. Un estadístico muestral sirve como estimador puntual del parámetro poblacional correspondiente.
+\end{remark}
+
+\section{Organización y Presentación de Datos}
+
+La organización efectiva de los datos es el primer paso hacia su comprensión. Los métodos más comunes incluyen:
+
+\begin{definition}[Tabla de Frecuencias]
+Una tabla de frecuencias es un \textbf{resumen tabular de los datos} que muestra las frecuencias absolutas, relativas, acumuladas y relativas acumuladas de cada valor o intervalo de valores.
+\end{definition}
+
+\begin{definition}[Distribución de Frecuencias]
+Para datos agrupados en intervalos, la distribución de frecuencias organiza los datos en clases mutuamente excluyentes, facilitando la identificación de patrones y tendencias.
+\end{definition}
+
+\section{Medidas de Tendencia Central}
+
+Las medidas de tendencia central describen el valor típico o representativo de un conjunto de datos, indicando hacia dónde se concentran las observaciones.
+
+\begin{definition}[Media Aritmética]
+La media aritmética es la \textbf{suma de todos los valores dividida por el número de observaciones}.
+
+Para una muestra:
+\begin{equation}
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\end{equation}
+
+Para una población:
+\begin{equation}
+\mu = \frac{1}{N} \sum_{i=1}^{N} x_i
+\end{equation}
+\end{definition}
+
+\begin{definition}[Mediana]
+La mediana es el \textbf{valor que ocupa la posición central} cuando los datos se ordenan de menor a mayor. Si el número de observaciones es par, es el promedio de los dos valores centrales.
+\end{definition}
+
+\begin{definition}[Moda]
+La moda es el \textbf{valor que aparece con mayor frecuencia} en un conjunto de datos. Es la única medida de tendencia central aplicable a datos nominales.
+\end{definition}
+
+\begin{remark}
+La elección de la medida de tendencia central apropiada depende del tipo de datos y la distribución:
+\begin{itemize}
+    \item La \textbf{media} es ideal para datos simétricos sin valores extremos
+    \item La \textbf{mediana} es preferible para distribuciones asimétricas o con outliers
+    \item La \textbf{moda} es útil para datos categóricos y para identificar valores más comunes
+\end{itemize}
+\end{remark}
+
+\section{Medidas de Dispersión}
+
+Las medidas de dispersión cuantifican la variabilidad o dispersión de los datos respecto a un valor central, proporcionando información crucial sobre la homogeneidad del conjunto de datos.
+
+\begin{definition}[Rango]
+El rango es la \textbf{diferencia entre el valor máximo y el valor mínimo} de un conjunto de datos:
+\begin{equation}
+R = x_{(n)} - x_{(1)}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Varianza]
+La varianza mide la \textbf{variabilidad promedio de los datos respecto a su media}, basándose en los cuadrados de las desviaciones.
+
+Para una muestra:
+\begin{equation}
+s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2
+\end{equation}
+
+Para una población:
+\begin{equation}
+\sigma^2 = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2
+\end{equation}
+\end{definition}
+
+\begin{definition}[Desviación Estándar]
+La desviación estándar es la \textbf{raíz cuadrada positiva de la varianza}, expresada en las mismas unidades que los datos originales:
+\begin{equation}
+s = \sqrt{s^2} \quad \text{(muestra)} \qquad \sigma = \sqrt{\sigma^2} \quad \text{(población)}
+\end{equation}
+\end{definition}
+
+\begin{definition}[Coeficiente de Variación]
+El coeficiente de variación es una \textbf{medida de variabilidad relativa} que permite comparar la dispersión entre conjuntos de datos con diferentes unidades o escalas:
+\begin{equation}
+CV = \frac{s}{\bar{x}} \times 100\%
+\end{equation}
+\end{definition}
+
+\begin{remark}
+Una desviación estándar menor indica mayor concentración de los datos alrededor de la media, lo que en contextos aplicados como control de calidad se interpreta como mayor consistencia y mejor calidad del proceso.
+\end{remark}
+
+\section{Medidas de Posición y Forma}
+
+\begin{definition}[Cuartiles]
+Los cuartiles son valores que \textbf{dividen los datos ordenados en cuatro partes iguales}:
+\begin{itemize}
+    \item $Q_1$ (primer cuartil): 25\% de los datos son menores o iguales a este valor
+    \item $Q_2$ (segundo cuartil): coincide con la mediana
+    \item $Q_3$ (tercer cuartil): 75\% de los datos son menores o iguales a este valor
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Percentiles]
+Los percentiles son valores que \textbf{dividen los datos en 100 partes iguales}. El percentil $P_k$ es el valor por debajo del cual se encuentra el $k\%$ de las observaciones.
+\end{definition}
+
+\begin{definition}[Asimetría (Sesgo)]
+La asimetría mide la \textbf{falta de simetría} en la distribución de los datos:
+\begin{itemize}
+    \item Sesgo positivo: cola más larga hacia la derecha
+    \item Sesgo cero: distribución simétrica
+    \item Sesgo negativo: cola más larga hacia la izquierda
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Curtosis]
+La curtosis mide el \textbf{grado de concentración} de los datos alrededor de la media:
+\begin{itemize}
+    \item Leptocúrtica: más concentrada que la normal (curtosis > 3)
+    \item Mesocúrtica: similar a la normal (curtosis = 3)
+    \item Platicúrtica: menos concentrada que la normal (curtosis < 3)
+\end{itemize}
+\end{definition}
+
+\section{Representación Gráfica}
+
+\begin{definition}[Histograma]
+Un histograma es una \textbf{representación gráfica de la distribución de frecuencias} mediante barras rectangulares cuya área es proporcional a la frecuencia de cada intervalo.
+\end{definition}
+
+\begin{definition}[Diagrama de Caja y Bigotes]
+El diagrama de caja resume la distribución mediante \textbf{cinco valores estadísticos clave}: valor mínimo, primer cuartil, mediana, tercer cuartil y valor máximo, facilitando la identificación de valores atípicos.
+\end{definition}
+
+\begin{remark}
+Los gráficos no solo facilitan la comprensión de los datos para el analista, sino que son herramientas fundamentales para comunicar hallazgos a audiencias técnicas y no técnicas.
+\end{remark}
+
+\section{Teoremas Fundamentales}
+
+\begin{theorem}[Desigualdad de Chebyshev]
+Para cualquier conjunto de datos, independientemente de su distribución, al menos $1 - \frac{1}{k^2}$ de los valores se encuentran dentro de $k$ desviaciones estándar de la media, donde $k > 1$.
+\end{theorem}
+
+\begin{theorem}[Regla Empírica]
+Para datos que siguen aproximadamente una distribución normal:
+\begin{itemize}
+    \item Aproximadamente 68\% de los datos está dentro de 1 desviación estándar de la media
+    \item Aproximadamente 95\% de los datos está dentro de 2 desviaciones estándar de la media
+    \item Aproximadamente 99.7\% de los datos está dentro de 3 desviaciones estándar de la media
+\end{itemize}
+\end{theorem}
+
+\begin{theorem}[Teorema de Glivenko-Cantelli]
+La función de distribución empírica converge uniformemente a la función de distribución poblacional cuando el tamaño de la muestra tiende a infinito, estableciendo el fundamento teórico para la inferencia estadística.
+\end{theorem}
+
+\section{Aplicaciones Prácticas}
+
+\subsection{Ingeniería y Control de Calidad}
+
+En ingeniería, la estadística descriptiva es fundamental para el Control Estadístico de Procesos (SPC). Por ejemplo, en el control de la profundidad de un chavetero, se calculan promedios y rangos de subgrupos para monitorear la estabilidad del proceso.
+
+\begin{remark}
+En metodologías como Seis Sigma, la variación se cuantifica mediante la desviación estándar, buscando reducirla hasta alcanzar 3.4 defectos por millón de oportunidades.
+\end{remark}
+
+\subsection{Medicina y Epidemiología}
+
+En investigación médica, las medidas descriptivas son esenciales para caracterizar poblaciones de estudio y resumir datos de biomarcadores. Los diagramas de caja son particularmente útiles para visualizar la distribución de respuestas a tratamientos y identificar valores atípicos.
+
+\subsection{Marketing y Análisis de Mercado}
+
+En marketing, los estadísticos descriptivos permiten estimar preferencias de consumidores y evaluar la efectividad de estrategias publicitarias. Los diagramas de Pareto ayudan a identificar los problemas más frecuentes o costosos.
+
+\section{Ejemplo Integrador}
+
+Consideremos el siguiente conjunto de datos que representa las edades de una muestra de 10 empleados: 25, 28, 30, 32, 35, 35, 40, 42, 45, 48.
+
+\textbf{Cálculos:}
+\begin{align}
+\bar{x} &= \frac{25 + 28 + 30 + 32 + 35 + 35 + 40 + 42 + 45 + 48}{10} = 36 \text{ años}\\
+\text{Mediana} &= \frac{35 + 35}{2} = 35 \text{ años}\\
+\text{Moda} &= 35 \text{ años}\\
+s^2 &= \frac{1}{9} \sum_{i=1}^{10} (x_i - 36)^2 = 56.67 \text{ años}^2\\
+s &= \sqrt{56.67} = 7.53 \text{ años}
+\end{align}
+
+\begin{remark}
+La proximidad entre la media y la mediana (36 vs 35) sugiere una distribución aproximadamente simétrica, lo que se confirma con el valor de sesgo cercano a cero.
+\end{remark}
+
+\section{Herramientas Computacionales}
+
+
+\section{Conclusiones}
+
+La estadística descriptiva proporciona las herramientas fundamentales para transformar datos brutos en información útil. Su dominio es esencial para cualquier análisis estadístico posterior y constituye la base sobre la cual se construyen técnicas más avanzadas de inferencia estadística.
+
+\begin{remark}
+El análisis descriptivo no solo resume los datos, sino que también revela patrones, identifica anomalías y sugiere hipótesis para investigaciones futuras. Su valor radica tanto en su capacidad analítica como en su poder comunicativo.
+\end{remark}
+
+La transición natural de la estadística descriptiva hacia la inferencial marca el paso de la simple descripción de lo observado hacia la formulación de conclusiones sobre poblaciones no observadas completamente, estableciendo así el puente entre la certeza de los datos y la incertidumbre inherente a la toma de decisiones basada en evidencia parcial.
+

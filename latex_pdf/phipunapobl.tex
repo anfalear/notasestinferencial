@@ -1,0 +1,237 @@
+\chapter{Prueba de Hipótesis para una Población}
+
+
+
+La prueba de hipótesis constituye una de las herramientas fundamentales de la inferencia estadística, permitiendo tomar decisiones informadas sobre parámetros poblacionales a partir de evidencia muestral. Este capítulo desarrolla los conceptos teóricos y aplicaciones prácticas de las pruebas de hipótesis para una población.
+
+\section{Introducción y Conceptos Fundamentales}
+
+\begin{definition}[Prueba de Hipótesis]
+Una \textbf{prueba de hipótesis} es un procedimiento estadístico que, basándose en la evidencia de una muestra y la teoría de la probabilidad, permite determinar si una afirmación sobre un parámetro poblacional es razonable.
+\end{definition}
+
+\begin{remark}
+La prueba de hipótesis forma parte de la inferencia estadística clásica junto con la estimación. Su objetivo principal es hacer inferencias sobre una población a partir de una cantidad limitada de observaciones muestrales. La disciplina de la probabilidad sirve como puente entre la estadística descriptiva y la estadística inferencial.
+\end{remark}
+
+\begin{definition}[Hipótesis Estadística]
+Una \textbf{hipótesis estadística} es una afirmación sobre el valor de un parámetro poblacional. Se distinguen dos tipos:
+\begin{itemize}
+    \item \textbf{Hipótesis nula ($H_0$):} Afirmación que se asume tentativamente como verdadera para realizar la prueba. Frecuentemente expresa igualdad o ausencia de efecto.
+    \item \textbf{Hipótesis alternativa ($H_1$ o $H_a$):} Afirmación que se acepta si la evidencia muestral contradice a $H_0$. Representa la hipótesis de investigación.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+La verdad o falsedad de una hipótesis estadística nunca se conoce con certeza absoluta, a menos que se examine toda la población, lo cual es impracticable en la mayoría de los casos. Por tanto, se utiliza una muestra aleatoria para proporcionar evidencia que respalde o contradiga la hipótesis.
+\end{remark}
+
+\subsection{Errores en las Pruebas de Hipótesis}
+
+\begin{definition}[Errores Tipo I y Tipo II]
+Al utilizar una muestra para tomar decisiones sobre la población, pueden ocurrir dos tipos de errores:
+\begin{itemize}
+    \item \textbf{Error Tipo I ($\alpha$):} Rechazar $H_0$ cuando en realidad es verdadera. Su probabilidad se denomina \textbf{nivel de significancia}.
+    \item \textbf{Error Tipo II ($\beta$):} No rechazar $H_0$ cuando en realidad es falsa.
+    \item \textbf{Potencia de la prueba:} $1-\beta$, probabilidad de rechazar correctamente $H_0$ cuando es falsa.
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Existe una relación inversa entre los errores tipo I y tipo II: si se intenta reducir uno, el otro tiende a aumentar para un tamaño de muestra dado. El nivel de significancia $\alpha$ se especifica antes de la recopilación de datos según la importancia relativa de los riesgos.
+\end{remark}
+
+\subsection{Metodología de la Prueba de Hipótesis}
+
+\begin{theorem}[Pasos de una Prueba de Hipótesis]
+El procedimiento sistemático para realizar una prueba de hipótesis consta de los siguientes pasos:
+\begin{enumerate}
+    \item Establecer las hipótesis nula y alternativa
+    \item Elegir un nivel de significancia ($\alpha$)
+    \item Identificar el estadístico de prueba y la distribución muestral apropiados
+    \item Formular la regla de decisión
+    \item Recopilar los datos de la muestra y calcular el estadístico de prueba
+    \item Tomar la decisión estadística y establecer la conclusión
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Valor p]
+El \textbf{valor p} es una probabilidad que mide la evidencia de la muestra contra la hipótesis nula. Cuanto menor sea el valor p, mayor será la evidencia contra $H_0$. La regla de decisión es: si valor p $< \alpha$, se rechaza $H_0$.
+\end{definition}
+
+\section{Prueba de Hipótesis para la Media Poblacional}
+
+\subsection{Caso 1: Desviación Estándar Poblacional Conocida}
+
+\begin{theorem}[Prueba Z para la Media]
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria de una población con media $\mu$ y desviación estándar conocida $\sigma$. Para probar $H_0: \mu = \mu_0$, el estadístico de prueba es:
+\[
+Z = \frac{\overline{X} - \mu_0}{\sigma/\sqrt{n}}
+\]
+que sigue una distribución normal estándar bajo $H_0$.
+\end{theorem}
+
+\begin{remark}
+La prueba Z se aplica cuando:
+\begin{itemize}
+    \item La población se distribuye normalmente, o
+    \item El tamaño de la muestra es suficientemente grande ($n \geq 30$) por el Teorema Central del Límite
+    \item Se dispone de datos históricos extensos o aplicaciones de control de calidad
+\end{itemize}
+\end{remark}
+
+\begin{example}[Aplicación en Control de Calidad]
+Una máquina llena bolsas de café con peso objetivo $\mu_0 = 500$ g y desviación estándar $\sigma = 10$ g. Se toma una muestra de $n=36$ bolsas obteniéndose $\overline{x} = 497$ g. ¿Existe evidencia de que la máquina se está desviando del objetivo? Use $\alpha = 0.05$.
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: \mu = 500$, $H_1: \mu \neq 500$ (prueba bilateral)
+    \item $\alpha = 0.05$, $z_{0.025} = 1.96$
+    \item $Z = \frac{497 - 500}{10/\sqrt{36}} = \frac{-3}{1.667} = -1.8$
+    \item $|Z| = 1.8 < 1.96$, no se rechaza $H_0$
+    \item Valor-p = $2P(Z > 1.8) = 2 \times 0.0359 = 0.0718 > 0.05$
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que la máquina está desviándose del objetivo.
+\end{example}
+
+\subsection{Caso 2: Desviación Estándar Poblacional Desconocida}
+
+\begin{theorem}[Prueba t para la Media]
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria de una población normal con media $\mu$ y desviación estándar desconocida. Para probar $H_0: \mu = \mu_0$, el estadístico de prueba es:
+\[
+t = \frac{\overline{X} - \mu_0}{S/\sqrt{n}}
+\]
+que sigue una distribución t de Student con $(n-1)$ grados de libertad bajo $H_0$.
+\end{theorem}
+
+\begin{remark}
+La prueba t es robusta a desviaciones moderadas de la normalidad, especialmente cuando el tamaño de la muestra es grande. Para muestras muy pequeñas ($n < 30$) y poblaciones marcadamente asimétricas, es apropiado considerar procedimientos no paramétricos.
+\end{remark}
+
+\begin{example}[Aplicación en Análisis Químico]
+Un laboratorio afirma que el contenido medio de vitamina C en un jugo es 50 mg por botella. Una muestra de $n=25$ botellas da $\overline{x} = 48.5$ mg, $s = 3$ mg. ¿Es válida la afirmación al 5\% de significancia?
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: \mu = 50$, $H_1: \mu \neq 50$
+    \item $\alpha = 0.05$, $t_{0.025,24} = 2.064$
+    \item $t = \frac{48.5 - 50}{3/\sqrt{25}} = \frac{-1.5}{0.6} = -2.5$
+    \item $|t| = 2.5 > 2.064$, se rechaza $H_0$
+    \item Valor-p $\approx 0.02 < 0.05$
+\end{enumerate}
+\textbf{Conclusión:} Hay evidencia suficiente para rechazar la afirmación del laboratorio.
+\end{example}
+
+\section{Prueba de Hipótesis para la Proporción Poblacional}
+
+\begin{definition}[Proporción Poblacional]
+Una \textbf{proporción} es la razón entre el número de elementos con una característica específica y el número total de observaciones. La estimación puntual para la proporción poblacional $p$ es la proporción muestral $\hat{p} = x/n$.
+\end{definition}
+
+\begin{theorem}[Prueba Z para la Proporción]
+Para una muestra de tamaño $n$ con $x$ éxitos, el estadístico de prueba para $H_0: p = p_0$ es:
+\[
+Z = \frac{\hat{p} - p_0}{\sqrt{p_0(1-p_0)/n}}
+\]
+que sigue aproximadamente una distribución normal estándar cuando $np_0 \geq 5$ y $n(1-p_0) \geq 5$.
+\end{theorem}
+
+\begin{remark}
+Las pruebas de proporción son fundamentales en:
+\begin{itemize}
+    \item Encuestas de opinión y estudios de mercado
+    \item Estudios clínicos y epidemiológicos
+    \item Control de calidad en procesos industriales
+    \item Análisis de efectividad de tratamientos
+\end{itemize}
+\end{remark}
+
+\begin{example}[Aplicación en Investigación de Mercado]
+En una encuesta, 62 de 100 personas prefieren un nuevo producto. ¿Difiere significativamente la proporción de preferencia del 60\%? Use $\alpha = 0.05$.
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: p = 0.6$, $H_1: p \neq 0.6$
+    \item $\hat{p} = 0.62$, $n = 100$
+    \item $Z = \frac{0.62 - 0.6}{\sqrt{0.6 \times 0.4/100}} = \frac{0.02}{0.049} = 0.41$
+    \item $|Z| = 0.41 < 1.96$, no se rechaza $H_0$
+    \item Valor-p $\approx 0.68 > 0.05$
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que la proporción difiere del 60\%.
+\end{example}
+
+\section{Prueba de Hipótesis para la Varianza Poblacional}
+
+\begin{definition}[Varianza Poblacional]
+La \textbf{varianza poblacional} $\sigma^2$ mide la dispersión de los valores alrededor de la media. Su estimador puntual es la varianza muestral $S^2$.
+\end{definition}
+
+\begin{theorem}[Prueba Chi-cuadrado para la Varianza]
+Para una muestra aleatoria de tamaño $n$ de una población normal, el estadístico de prueba para $H_0: \sigma^2 = \sigma_0^2$ es:
+\[
+\chi^2 = \frac{(n-1)S^2}{\sigma_0^2}
+\]
+que sigue una distribución chi-cuadrado con $(n-1)$ grados de libertad bajo $H_0$.
+\end{theorem}
+
+\begin{remark}
+La prueba chi-cuadrado para la varianza no es robusta a desviaciones de la normalidad. Si la población no es normal, el valor p calculado puede ser significativamente diferente del valor p verdadero. Se recomienda evaluar la normalidad mediante gráficas de probabilidad normal y pruebas de bondad de ajuste.
+\end{remark}
+
+\begin{remark}
+Las pruebas de varianza son especialmente relevantes en:
+\begin{itemize}
+    \item \textbf{Control de calidad:} Para asegurar consistencia en procesos manufactureros
+    \item \textbf{Six Sigma:} La reducción de variabilidad es fundamental en esta metodología
+    \item \textbf{Diseño experimental:} Para evaluar homogeneidad de unidades experimentales
+    \item \textbf{Índices de capacidad:} Cp y Cpk se basan en la desviación estándar del proceso
+\end{itemize}
+\end{remark}
+
+\begin{example}[Aplicación en Control de Calidad]
+Un fabricante de componentes electrónicos requiere que la varianza en las medidas de resistencia no exceda $\sigma_0^2 = 4$ ohmios$^2$. Una muestra de $n=20$ componentes da $s^2 = 6.2$ ohmios$^2$. ¿Cumple el proceso con la especificación? Use $\alpha = 0.05$.
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: \sigma^2 \leq 4$, $H_1: \sigma^2 > 4$ (prueba unilateral derecha)
+    \item $\alpha = 0.05$, $\chi^2_{0.05,19} = 30.14$
+    \item $\chi^2 = \frac{(20-1) \times 6.2}{4} = \frac{19 \times 6.2}{4} = 29.45$
+    \item $\chi^2 = 29.45 < 30.14$, no se rechaza $H_0$
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que el proceso no cumple la especificación.
+\end{example}
+
+\section{Consideraciones Prácticas y Recomendaciones}
+
+\begin{remark}
+Al interpretar resultados de pruebas de hipótesis, es importante considerar:
+\begin{itemize}
+    \item Un valor p pequeño indica evidencia contra $H_0$, pero no prueba causalidad
+    \item Un resultado "no significativo" no prueba que $H_0$ sea verdadera
+    \item Siempre interpretar los resultados en el contexto del problema
+    \item Considerar la significancia práctica además de la estadística
+    \item Evaluar el tamaño del efecto y la potencia de la prueba
+\end{itemize}
+\end{remark}
+
+\begin{remark}
+La elección del nivel de significancia $\alpha$ debe basarse en:
+\begin{itemize}
+    \item La importancia relativa de los errores tipo I y tipo II
+    \item Las consecuencias de tomar una decisión incorrecta
+    \item Las convenciones del área de aplicación
+    \item El costo de obtener más datos para reducir los errores
+\end{itemize}
+\end{remark}
+
+\section{Ejercicios Propuestos}
+
+\begin{enumerate}
+    \item Un fabricante afirma que la vida media de sus bombillas es de 1200 horas. Una muestra de 40 bombillas tiene media 1170 horas y $s = 80$ horas. ¿Se puede rechazar la afirmación al 5\% de significancia?
+    
+    \item En una encuesta, 45 de 150 personas prefieren un nuevo diseño. ¿Difiere significativamente la proporción de la hipótesis de que el 30\% prefiere el nuevo diseño? Use $\alpha = 0.05$.
+    
+    \item Un proceso de manufactura requiere que la varianza del peso de los productos no exceda 2.5 g$^2$. Una muestra de 25 productos da $s^2 = 3.8$ g$^2$. ¿Cumple el proceso con la especificación al 1\% de significancia?
+    
+    \item Un laboratorio afirma que el contenido medio de sodio en una bebida es 100 mg. Una muestra de 16 bebidas da $\overline{x} = 104$ mg, $s = 6$ mg. ¿Es creíble la afirmación al 1\% de significancia?
+\end{enumerate}

@@ -1,0 +1,268 @@
+\chapter{Estimación}
+
+La estadística inferencial constituye uno de los pilares fundamentales de la ciencia estadística, permitiendo **utilizar los resultados derivados de las muestras para obtener conclusiones acerca de las características de una población**. A diferencia de la estadística descriptiva, que se enfoca en organizar y resumir datos observados, la inferencia estadística busca determinar propiedades de una población completa a partir de un subconjunto limitado de datos conocido como muestra.
+
+\begin{definition}[Parámetro y Estadístico]
+Un \textbf{parámetro} es un valor numérico que resume una característica de toda la población (por ejemplo, $\mu$, $p$, $\sigma^2$). Un \textbf{estadístico} es una función calculada a partir de los datos de la muestra (por ejemplo, $\overline{X}$, $\hat{p}$, $s^2$).
+\end{definition}
+
+Dentro de la inferencia estadística, la **estimación** representa una de las dos áreas principales, siendo la otra las pruebas de hipótesis. La estimación busca proporcionar información sobre los parámetros poblacionales desconocidos mediante el uso de estadísticos muestrales.
+
+\begin{definition}[Estimador y Estimación]
+Un \textbf{estimador} es una función de los datos muestrales que se usa para aproximar un parámetro poblacional. El valor numérico que toma el estimador en una muestra concreta se denomina \textbf{estimación puntual}. 
+
+La **estimación por intervalos** proporciona un rango de valores (intervalo de confianza) dentro del cual es probable que se encuentre el parámetro poblacional, junto con un nivel de confianza asociado.
+\end{definition}
+
+\begin{remark}
+Un buen estimador debe cumplir con ciertas propiedades deseables: ser insesgado (su valor esperado es igual al parámetro), eficiente (mínima varianza), consistente (converge al parámetro al aumentar el tamaño muestral) y robusto (poco sensible a valores atípicos).
+\end{remark}
+
+Para comprender adecuadamente la estimación, es crucial dominar el concepto de **distribución muestral**, que representa la distribución de todos los posibles valores de un estadístico que podrían surgir al seleccionar todas las muestras posibles de un tamaño determinado.
+
+\section{Estimación para la Media Poblacional}
+
+La media poblacional ($\mu$) representa el valor promedio de todos los elementos en una población. Es un parámetro constante que no se ve afectado por las observaciones de una muestra particular.
+
+\subsection{Estimación Puntual de la Media}
+
+\begin{definition}[Media Muestral]
+El estimador puntual más importante para la media poblacional $\mu$ es la media muestral:
+\[
+\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i
+\]
+donde $X_1, X_2, \ldots, X_n$ son las observaciones de la muestra.
+\end{definition}
+
+\begin{theorem}[Insesgadez de la Media Muestral]
+La media muestral $\overline{X}$ es un estimador insesgado de la media poblacional $\mu$, es decir:
+\[
+\mathbb{E}[\overline{X}] = \mu
+\]
+\end{theorem}
+
+\subsection{Estimación por Intervalos para la Media}
+
+\begin{definition}[Intervalo de Confianza]
+Un intervalo de confianza para un parámetro poblacional es un rango de valores que, con un nivel de confianza dado $(1-\alpha)$, contiene el valor real del parámetro poblacional.
+\end{definition}
+
+La construcción de intervalos de confianza para la media depende de si la desviación estándar poblacional es conocida o desconocida.
+
+\textbf{Caso 1: Desviación estándar poblacional ($\sigma$) conocida}
+
+Cuando se dispone de información histórica abundante o datos previos que permiten conocer $\sigma$, el intervalo de confianza se basa en la distribución normal estándar:
+
+\[
+\text{IC}_{1-\alpha}: \left( \overline{X} - z_{\alpha/2} \frac{\sigma}{\sqrt{n}}, \overline{X} + z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right)
+\]
+
+\textbf{Caso 2: Desviación estándar poblacional ($\sigma$) desconocida}
+
+Esta es la situación más común en la práctica. Se utiliza la desviación estándar muestral ($s$) y la distribución t de Student:
+
+\[
+\text{IC}_{1-\alpha}: \left( \overline{X} - t_{\alpha/2, n-1} \frac{s}{\sqrt{n}}, \overline{X} + t_{\alpha/2, n-1} \frac{s}{\sqrt{n}} \right)
+\]
+
+\begin{remark}
+La distribución t de Student es similar a la normal estándar pero tiene "colas" más pesadas, reflejando la incertidumbre adicional de estimar $\sigma$. Los grados de libertad $(n-1)$ son fundamentales para determinar la forma exacta de la distribución.
+\end{remark}
+
+\begin{example}[Intervalo de Confianza para la Media]
+Una muestra de $n=25$ resistencias eléctricas tiene una media de $\overline{X} = 98$ ohmios y una desviación estándar de $s = 5$ ohmios. Calcule un intervalo de confianza del 95\% para la media poblacional.
+
+\textbf{Solución:}
+\begin{enumerate}
+\item Nivel de confianza = 95\% $\Rightarrow \alpha = 0.05 \Rightarrow \alpha/2 = 0.025$
+\item Grados de libertad = $n-1 = 24$
+\item Valor crítico: $t_{0.025,24} \approx 2.064$
+\item Error estándar: $SE = \frac{s}{\sqrt{n}} = \frac{5}{\sqrt{25}} = 1$
+\item Límites del intervalo:
+   \begin{align}
+   \text{Límite inferior} &= 98 - 2.064 \times 1 = 95.936\\
+   \text{Límite superior} &= 98 + 2.064 \times 1 = 100.064
+   \end{align}
+\end{enumerate}
+
+Por tanto, el intervalo de confianza del 95\% para la media poblacional es $(95.936, 100.064)$ ohmios.
+\end{example}
+
+\subsection{Supuestos y Condiciones de Aplicabilidad}
+
+\begin{theorem}[Teorema del Límite Central]
+Si el tamaño de muestra $n$ es suficientemente grande (generalmente $n \geq 30$), la distribución muestral de la media será aproximadamente normal, independientemente de la forma de la distribución poblacional original:
+\[
+\overline{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+\]
+\end{theorem}
+
+\begin{remark}
+Los supuestos fundamentales para la estimación de la media incluyen:
+\begin{itemize}
+\item \textbf{Normalidad:} Para muestras pequeñas, se asume que la población sigue una distribución normal.
+\item \textbf{Independencia:} Las observaciones deben ser independientes entre sí.
+\item \textbf{Robustez:} La distribución t es razonablemente robusta a desviaciones leves de la normalidad, especialmente con muestras grandes.
+\end{itemize}
+\end{remark}
+
+\section{Estimación para la Proporción Poblacional}
+
+La proporción poblacional ($p$) representa la fracción de elementos en una población que poseen una característica específica de interés. Es fundamental en estudios que involucran datos categóricos o binarios.
+
+\subsection{Estimación Puntual de la Proporción}
+
+\begin{definition}[Proporción Muestral]
+El estimador puntual para la proporción poblacional $p$ es la proporción muestral:
+\[
+\hat{p} = \frac{X}{n}
+\]
+donde $X$ es el número de elementos en la muestra que poseen la característica de interés y $n$ es el tamaño de la muestra.
+\end{definition}
+
+\begin{theorem}[Insesgadez de la Proporción Muestral]
+La proporción muestral $\hat{p}$ es un estimador insesgado de la proporción poblacional $p$:
+\[
+\mathbb{E}[\hat{p}] = p
+\]
+\end{theorem}
+
+\subsection{Estimación por Intervalos para la Proporción}
+
+Para muestras grandes, cuando se cumplen las condiciones $n\hat{p} \geq 5$ y $n(1-\hat{p}) \geq 5$, el intervalo de confianza se basa en la aproximación normal:
+
+\[
+\text{IC}_{1-\alpha}: \left( \hat{p} - z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}, \hat{p} + z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \right)
+\]
+
+\begin{example}[Intervalo de Confianza para la Proporción]
+En una encuesta realizada a 100 personas, 56 manifestaron preferir un producto específico. Calcule un intervalo de confianza del 95\% para la proporción poblacional.
+
+\textbf{Solución:}
+\begin{enumerate}
+\item Proporción muestral: $\hat{p} = \frac{56}{100} = 0.56$
+\item Nivel de confianza = 95\% $\Rightarrow z_{0.025} = 1.96$
+\item Verificación de condiciones: $n\hat{p} = 56 \geq 5$ y $n(1-\hat{p}) = 44 \geq 5$ 
+\item Error estándar: $SE = \sqrt{\frac{0.56 \times 0.44}{100}} = \sqrt{0.002464} = 0.0496$
+\item Límites del intervalo:
+   \begin{align}
+   \text{Límite inferior} &= 0.56 - 1.96 \times 0.0496 = 0.463\\
+   \text{Límite superior} &= 0.56 + 1.96 \times 0.0496 = 0.657
+   \end{align}
+\end{enumerate}
+
+El intervalo de confianza del 95\% para la proporción poblacional es $(0.463, 0.657)$.
+\end{example}
+
+\begin{remark}
+Los contextos típicos donde se aplica la estimación de proporciones incluyen:
+\begin{itemize}
+\item Encuestas de opinión pública
+\item Estudios clínicos y biomédicos
+\item Control de calidad en procesos de manufactura
+\item Investigación de mercado
+\end{itemize}
+\end{remark}
+
+\section{Estimación para la Varianza Poblacional}
+
+La varianza poblacional ($\sigma^2$) y su raíz cuadrada, la desviación estándar ($\sigma$), son medidas fundamentales de la dispersión o variabilidad de los datos.
+
+\subsection{Estimación Puntual de la Varianza}
+
+\begin{definition}[Varianza Muestral]
+El estimador puntual insesgado para la varianza poblacional $\sigma^2$ es la varianza muestral:
+\[
+s^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \overline{X})^2
+\]
+\end{definition}
+
+\begin{remark}
+La varianza muestral utiliza $(n-1)$ en el denominador en lugar de $n$ para garantizar que sea un estimador insesgado. Esta corrección se conoce como corrección de Bessel.
+\end{remark}
+
+\subsection{Estimación por Intervalos para la Varianza}
+
+Cuando la población sigue una distribución normal, el intervalo de confianza para la varianza se basa en la distribución chi-cuadrado ($\chi^2$):
+
+\[
+\text{IC}_{1-\alpha}: \left( \frac{(n-1)s^2}{\chi^2_{\alpha/2, n-1}}, \frac{(n-1)s^2}{\chi^2_{1-\alpha/2, n-1}} \right)
+\]
+
+\begin{example}[Intervalo de Confianza para la Varianza]
+En una muestra de $n=10$ mediciones se obtuvo $s^2 = 2.5$. Calcule un intervalo de confianza del 95\% para la varianza poblacional.
+
+\textbf{Solución:}
+\begin{enumerate}
+\item Grados de libertad: $n-1 = 9$
+\item Valores críticos: $\chi^2_{0.025,9} = 19.02$ y $\chi^2_{0.975,9} = 2.70$
+\item Límites del intervalo:
+   \begin{align}
+   \text{Límite inferior} &= \frac{9 \times 2.5}{19.02} = 1.18\\
+   \text{Límite superior} &= \frac{9 \times 2.5}{2.70} = 8.33
+   \end{align}
+\end{enumerate}
+
+El intervalo de confianza del 95\% para la varianza poblacional es $(1.18, 8.33)$.
+\end{example}
+
+\begin{remark}
+La estimación de la varianza es crucial en diversas aplicaciones:
+\begin{itemize}
+\item \textbf{Control de calidad:} Garantizar que un proceso cumpla con especificaciones
+\item \textbf{Diseño experimental:} Reducir el error experimental para obtener inferencias más precisas
+\item \textbf{Finanzas:} Medir el riesgo asociado a inversiones
+\item \textbf{Estudios de capacidad:} Evaluar la capacidad de procesos industriales
+\end{itemize}
+\end{remark}
+
+\section{Interpretación y Aplicaciones de los Intervalos de Confianza}
+
+\begin{definition}[Nivel de Confianza]
+El nivel de confianza $(1-\alpha)$ es la probabilidad de que el intervalo calculado contenga el valor real del parámetro si el procedimiento de muestreo se repitiera muchas veces bajo las mismas condiciones.
+\end{definition}
+
+\begin{remark}
+Consideraciones importantes sobre los intervalos de confianza:
+\begin{itemize}
+\item Un intervalo más estrecho indica mayor precisión en la estimación
+\item La precisión se puede mejorar aumentando el tamaño de muestra o reduciendo la variabilidad
+\item El margen de error es la mitad de la amplitud del intervalo
+\item Un resultado estadísticamente significativo no implica necesariamente relevancia práctica
+\end{itemize}
+\end{remark}
+
+\section{Determinación del Tamaño de Muestra}
+
+Para estimar parámetros poblacionales con un margen de error específico y un nivel de confianza dado, es posible determinar el tamaño de muestra necesario:
+
+\textbf{Para la media (con $\sigma$ conocida):}
+\[
+n = \left(\frac{z_{\alpha/2} \sigma}{E}\right)^2
+\]
+
+\textbf{Para la proporción:}
+\[
+n = \left(\frac{z_{\alpha/2}}{E}\right)^2 \hat{p}(1-\hat{p})
+\]
+
+donde $E$ es el margen de error deseado.
+
+\begin{remark}
+La determinación del tamaño de muestra es fundamental en la planificación de estudios, especialmente cuando existen restricciones de presupuesto y tiempo. Para proporciones sin estimación previa, se puede usar $\hat{p} = 0.5$ para obtener el tamaño de muestra más conservador.
+\end{remark}
+
+\section{Consideraciones Éticas y Prácticas}
+
+\begin{remark}
+Es fundamental que los resultados de estimación se presenten de manera ética e imparcial, incluyendo:
+\begin{itemize}
+\item Las estimaciones puntuales junto con sus intervalos de confianza
+\item El tamaño de muestra utilizado
+\item Las suposiciones realizadas
+\item Una interpretación clara del significado de los resultados
+\item Las limitaciones del estudio
+\end{itemize}
+\end{remark}
+
+La estimación estadística proporciona las herramientas esenciales para transformar datos muestrales en información confiable que sustente la toma de decisiones en diversas disciplinas, desde la administración y economía hasta la ingeniería y medicina. La correcta aplicación de estas técnicas, junto con una interpretación adecuada de los resultados, constituye la base de la inferencia estadística moderna.

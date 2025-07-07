@@ -1,0 +1,244 @@
+\chapter{Distribución Normal y Distribuciones Muestrales}
+
+\section{Fundamentos Teóricos}
+
+La distribución normal constituye el pilar fundamental de la estadística moderna y representa uno de los conceptos más importantes en la teoría de la probabilidad. Su desarrollo histórico ha sido influenciado significativamente por los trabajos de la llamada "Escuela Rusa", con contribuciones notables de figuras como P.L. Chebyshev y A.M. Liapunov, quienes marcaron un "nuevo período" en el desarrollo de la ciencia matemática.
+
+\begin{definition}[Distribución Normal]
+Una variable aleatoria continua $X$ sigue una distribución normal con parámetros $\mu$ y $\sigma^2$, denotada como $X \sim N(\mu, \sigma^2)$, si su función de densidad de probabilidad está dada por:
+\begin{equation}
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x - \mu}{\sigma}\right)^2}, \quad -\infty < x < \infty
+\end{equation}
+donde $\mu$ es la media poblacional y $\sigma^2$ es la varianza poblacional.
+\end{definition}
+
+\begin{remark}
+La distribución normal, también conocida como campana de Gauss, posee propiedades únicas que la hacen especialmente útil en aplicaciones prácticas:
+\begin{itemize}
+    \item Es simétrica alrededor de su media $\mu$, siendo unimodal
+    \item Su media, mediana y moda coinciden en el mismo valor
+    \item Aproximadamente el 68\% del área bajo la curva se encuentra entre $\mu \pm \sigma$
+    \item Alrededor del 95\% del área se encuentra entre $\mu \pm 2\sigma$
+    \item Aproximadamente el 99.7\% del área se encuentra entre $\mu \pm 3\sigma$
+    \item Queda completamente definida por sus dos parámetros: $\mu$ y $\sigma$
+\end{itemize}
+\end{remark}
+
+\begin{example}
+Un ingeniero de control de calidad monitorea el peso de componentes electrónicos en una línea de producción. Si los pesos siguen una distribución normal con $\mu = 50$ gramos y $\sigma = 2$ gramos, podemos establecer que aproximadamente el 95\% de los componentes tendrán un peso entre 46 y 54 gramos ($\mu \pm 2\sigma$). Esta propiedad es fundamental para establecer límites de control en gráficas de control estadístico.
+\end{example}
+
+\section{El Teorema Central del Límite}
+
+El Teorema Central del Límite representa una de las herramientas más poderosas de la estadística, proporcionando la justificación teórica para el uso de la distribución normal en numerosas aplicaciones prácticas.
+
+\begin{theorem}[Teorema Central del Límite]
+Sea $X_1, X_2, \ldots, X_n$ una muestra aleatoria de una población con media $\mu$ y varianza finita $\sigma^2$. Cuando $n$ es suficientemente grande, la distribución de la media muestral $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$ se aproxima a una distribución normal:
+\begin{equation}
+\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+\end{equation}
+Esta aproximación mejora a medida que $n$ aumenta, independientemente de la forma de la distribución original de la población.
+\end{theorem}
+
+\begin{remark}
+La importancia del Teorema Central del Límite radica en que permite hacer inferencias sobre la media poblacional sin necesidad de conocer la forma específica de la distribución de la población. En la práctica, se considera que $n \geq 30$ es suficiente para que la aproximación normal sea adecuada.
+
+El desarrollo teórico del TCL se fundamenta en teoremas de continuidad y convergencia. Los trabajos de Borovkov presentan el "segundo teorema de continuidad" y el "tercer teorema de continuidad", que son fundamentales para entender cómo las propiedades de las funciones de distribución se preservan y cómo una secuencia de distribuciones converge a una distribución límite.
+\end{remark}
+
+\begin{example}
+Un ingeniero químico estudia un proceso donde el tiempo de reacción tiene una distribución desconocida con media $\mu = 15$ minutos y desviación estándar $\sigma = 4$ minutos. Si toma muestras de $n = 64$ observaciones, el TCL garantiza que la media muestral $\bar{X}$ se distribuirá aproximadamente como $N(15, 4^2/64) = N(15, 0.25)$. Esto significa que la desviación estándar de la media muestral será $\sigma/\sqrt{n} = 4/8 = 0.5$ minutos.
+\end{example}
+
+\section{Distribuciones Muestrales}
+
+El concepto de distribución muestral es fundamental para comprender la inferencia estadística y la variabilidad inherente en los procesos de muestreo.
+
+\begin{definition}[Distribución Muestral]
+La distribución muestral de un estadístico es la distribución de probabilidad de ese estadístico calculado sobre todas las posibles muestras de un tamaño fijo extraídas de una población. Como distintas muestras pueden producir valores diferentes para el mismo estadístico, este se considera una variable aleatoria.
+\end{definition}
+
+\subsection{Distribución Muestral de la Media}
+
+\begin{remark}
+Para la media muestral $\bar{X}$, se pueden establecer las siguientes propiedades importantes:
+\begin{itemize}
+    \item Si la población original tiene distribución normal, $\bar{X}$ también tendrá distribución normal, independientemente del tamaño de muestra
+    \item Si la población no es normal, el TCL asegura que $\bar{X}$ se aproxima a una distribución normal cuando $n$ es grande
+    \item La media de la distribución muestral de $\bar{X}$ es igual a la media poblacional: $E[\bar{X}] = \mu$
+    \item La varianza de la distribución muestral de $\bar{X}$ es: $\text{Var}(\bar{X}) = \sigma^2/n$
+\end{itemize}
+\end{remark}
+
+\begin{example}
+En un estudio de resistencia de cables eléctricos, la población tiene media $\mu = 150$ N y desviación estándar $\sigma = 10$ N. Si se toma una muestra de $n = 36$ cables, la distribución de la media muestral será:
+\begin{equation}
+\bar{X} \sim N\left(150, \frac{10^2}{36}\right) = N(150, 2.78)
+\end{equation}
+La probabilidad de que la media muestral exceda 153 N es:
+\begin{equation}
+P(\bar{X} > 153) = P\left(Z > \frac{153-150}{\sqrt{10^2/36}}\right) = P(Z > 1.80) \approx 0.0359
+\end{equation}
+\end{example}
+
+\subsection{Distribución Muestral de la Proporción}
+
+\begin{definition}[Distribución Muestral de la Proporción]
+Si en una población la proporción de elementos con cierta característica es $p$, y en una muestra de tamaño $n$ se observa la proporción muestral $\hat{p}$, entonces:
+\begin{itemize}
+    \item $E[\hat{p}] = p$
+    \item $\text{Var}(\hat{p}) = \frac{p(1-p)}{n}$
+\end{itemize}
+Para $n$ suficientemente grande, $\hat{p}$ se distribuye aproximadamente normal:
+\begin{equation}
+\hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)
+\end{equation}
+\end{definition}
+
+\begin{example}
+Una empresa de bebidas realiza una encuesta para evaluar la aceptación de un nuevo producto. Si el 40\% de la población prefiere el producto y se toma una muestra de $n = 100$ clientes, la probabilidad de que al menos 50 prefieran el producto es:
+\begin{align}
+\hat{p} &\sim N\left(0.4, \frac{0.4 \times 0.6}{100}\right) = N(0.4, 0.0024)\\
+P(\hat{p} \geq 0.5) &= P\left(Z \geq \frac{0.5-0.4}{\sqrt{0.0024}}\right) = P(Z \geq 2.04) \approx 0.0207
+\end{align}
+\end{example}
+
+\subsection{Otras Distribuciones Muestrales Importantes}
+
+\begin{remark}
+Además de la distribución normal, existen otras distribuciones fundamentales que surgen del muestreo:
+\begin{itemize}
+    \item \textbf{Distribución ji-cuadrada ($\chi^2$)}: Para una muestra de tamaño $n$ de una población normal, el estadístico $\frac{(n-1)S^2}{\sigma^2}$ sigue una distribución $\chi^2$ con $n-1$ grados de libertad
+    \item \textbf{Distribución t de Student}: Se utiliza para inferencias sobre la media cuando $\sigma$ es desconocida y se estima con $s$
+    \item \textbf{Distribución F}: Se aplica en comparación de varianzas y análisis de varianza (ANOVA)
+\end{itemize}
+\end{remark}
+
+\section{Aplicaciones Prácticas}
+
+\subsection{Ingeniería y Control de Calidad}
+
+\begin{example}
+En el control estadístico de procesos (SPC), las gráficas de control se basan en las propiedades de la distribución normal. Una gráfica de control $\bar{X}$ monitorea las medias de subgrupos para detectar cambios en el promedio del proceso. Los límites de control se establecen típicamente en $\mu \pm 3\sigma/\sqrt{n}$, aprovechando que aproximadamente el 99.7\% de las observaciones deben estar dentro de estos límites cuando el proceso está bajo control.
+
+Si las medias de las muestras caen fuera de estos límites, esto indica que el proceso está fuera de control estadístico, señalando la necesidad de investigar y corregir causas asignables.
+\end{example}
+
+\begin{example}
+En el diseño de experimentos, un ingeniero químico optimiza la conversión porcentual de un proceso variando tiempo y temperatura de reacción. Utilizando un diseño factorial $2^2$, el análisis de varianza (ANOVA) emplea la distribución F para comparar la influencia de diferentes factores. La metodología de superficie de respuesta (MSR) utiliza modelos de segundo orden para encontrar condiciones óptimas, donde las distribuciones muestrales son fundamentales para evaluar la significancia estadística de los efectos.
+\end{example}
+
+\subsection{Medicina y Investigación Clínica}
+
+\begin{example}
+En un ensayo clínico para evaluar la eficacia de un nuevo medicamento para reducir la presión arterial, se asignan aleatoriamente pacientes a grupos de tratamiento y control. Después del período de tratamiento, se utiliza la prueba t para dos muestras (basada en la distribución t de Student) para determinar si la reducción promedio de presión arterial en el grupo de tratamiento es significativamente diferente del grupo control.
+
+Si las reducciones promedio son $\bar{X}_1 = 15$ mmHg y $\bar{X}_2 = 8$ mmHg con desviaciones estándar $s_1 = 6$ y $s_2 = 5$ mmHg respectivamente, y tamaños de muestra $n_1 = n_2 = 30$, el estadístico de prueba sería:
+\begin{equation}
+t = \frac{(\bar{X}_1 - \bar{X}_2) - 0}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} = \frac{7}{\sqrt{\frac{36}{30} + \frac{25}{30}}} \approx 4.96
+\end{equation}
+\end{example}
+
+\subsection{Marketing y Estudios de Mercado}
+
+\begin{example}
+Una empresa analiza la satisfacción del cliente mediante encuestas. Si las calificaciones de satisfacción se distribuyen normalmente con media $\mu = 7.5$ y desviación estándar $\sigma = 1.2$ en una escala de 1 a 10, la empresa puede estimar que aproximadamente el 95\% de los clientes tendrán calificaciones entre 5.1 y 9.9 ($\mu \pm 2\sigma$).
+
+Para una muestra de $n = 100$ clientes, la distribución de la media muestral será $N(7.5, 1.2^2/100) = N(7.5, 0.0144)$, permitiendo hacer inferencias más precisas sobre la satisfacción promedio de toda la población de clientes.
+\end{example}
+
+\section{Estandarización y Cálculo de Probabilidades}
+
+\begin{remark}
+La estandarización es un proceso fundamental que permite convertir cualquier variable normal en una variable normal estándar. Para una variable $X \sim N(\mu, \sigma^2)$, la transformación:
+\begin{equation}
+Z = \frac{X - \mu}{\sigma}
+\end{equation}
+produce una variable $Z \sim N(0,1)$, lo que permite el uso de tablas estándar y facilita la comparación entre diferentes poblaciones.
+\end{remark}
+
+\begin{example}
+La vida útil de un componente electrónico sigue una distribución $N(1200, 100^2)$ horas. Para encontrar la probabilidad de que un componente dure más de 1350 horas:
+\begin{align}
+P(X > 1350) &= P\left(\frac{X-1200}{100} > \frac{1350-1200}{100}\right)\\
+&= P(Z > 1.5) = 1 - \Phi(1.5) = 1 - 0.9332 = 0.0668
+\end{align}
+donde $\Phi$ representa la función de distribución acumulativa de la normal estándar.
+\end{example}
+
+\begin{example}
+En una línea de producción, el peso de las botellas sigue $N(500, 25)$ gramos. Para cumplir normas de calidad, solo se aceptan botellas entre 490 g y 510 g. El porcentaje de producción aceptable es:
+\begin{align}
+P(490 < X < 510) &= P\left(\frac{490-500}{5} < Z < \frac{510-500}{5}\right)\\
+&= P(-2 < Z < 2) = \Phi(2) - \Phi(-2)\\
+&= 0.9772 - 0.0228 = 0.9544
+\end{align}
+Por tanto, el 95.44\% de las botellas cumplen la especificación.
+\end{example}
+
+\section{Simulación y Verificación Computacional}
+
+\begin{remark}
+La simulación computacional permite verificar los conceptos teóricos y visualizar el comportamiento de las distribuciones muestrales. Para ilustrar el Teorema Central del Límite, se puede simular la distribución de medias muestrales a partir de poblaciones no normales y observar cómo la distribución resultante se aproxima a la normalidad.
+\end{remark}
+
+\begin{example}[Simulación del TCL]
+Para demostrar el Teorema Central del Límite utilizando Python:
+\begin{verbatim}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Población exponencial (no normal)
+np.random.seed(42)
+population = np.random.exponential(scale=1.0, size=100000)
+
+# Generar múltiples medias muestrales
+sample_means = []
+for _ in range(1000):
+    sample = np.random.choice(population, size=30)
+    sample_means.append(np.mean(sample))
+
+# Visualizar la distribución de medias muestrales
+plt.hist(sample_means, bins=50, density=True, alpha=0.7)
+plt.title('Distribución de Medias Muestrales (n=30)')
+plt.xlabel('Media Muestral')
+plt.ylabel('Densidad')
+plt.show()
+\end{verbatim}
+Este código demuestra cómo las medias muestrales se distribuyen normalmente incluso cuando la población original no es normal.
+\end{example}
+
+\section{Ejercicios y Problemas}
+
+\begin{example}
+Un fabricante desea garantizar que el 90\% de sus productos duren al menos $T$ horas. Si la vida útil es $N(2000, 150^2)$, encontrar el valor de $T$.
+
+\textbf{Solución:} Se requiere $P(X > T) = 0.90$, lo que implica $P(X < T) = 0.10$.
+Para la distribución normal estándar, $P(Z < -1.2816) = 0.10$.
+Por tanto:
+\begin{equation}
+T = \mu + Z\sigma = 2000 + (-1.2816)(150) = 1808 \text{ horas}
+\end{equation}
+\end{example}
+
+\begin{example}
+En un proceso industrial, las piezas tienen longitud normal $N(50, 0.25)$ mm. Determinar la proporción de piezas que miden entre 49.2 mm y 50.5 mm.
+
+\textbf{Solución:}
+\begin{align}
+P(49.2 < X < 50.5) &= P\left(\frac{49.2-50}{0.5} < Z < \frac{50.5-50}{0.5}\right)\\
+&= P(-1.6 < Z < 1.0)\\
+&= \Phi(1.0) - \Phi(-1.6) = 0.8413 - 0.0548 = 0.7865
+\end{align}
+Aproximadamente el 78.65\% de las piezas cumple la especificación.
+\end{example}
+
+\section{Conclusiones}
+
+La distribución normal y las distribuciones muestrales forman la base conceptual de la inferencia estadística moderna. El Teorema Central del Límite proporciona la justificación teórica para el uso generalizado de la distribución normal, mientras que las distribuciones muestrales permiten cuantificar la incertidumbre en las estimaciones estadísticas.
+
+La comprensión de estos conceptos es fundamental para aplicaciones en ingeniería, medicina, marketing y otras disciplinas, donde la toma de decisiones basada en datos requiere un entendimiento sólido de la variabilidad y la incertidumbre inherentes en los procesos de medición y muestreo.
+
+\begin{remark}
+Los conceptos presentados en este capítulo son prerrequisitos esenciales para el estudio de la estimación de parámetros, pruebas de hipótesis y análisis de regresión, temas que se desarrollarán en capítulos posteriores.
+\end{remark}

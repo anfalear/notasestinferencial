@@ -1,0 +1,224 @@
+\chapter{Pruebas de Hipótesis para Dos Poblaciones}
+
+La comparación de dos poblaciones constituye una extensión natural de las pruebas de hipótesis para una población y representa una de las aplicaciones más frecuentes en la inferencia estadística. Este capítulo desarrolla los métodos estadísticos fundamentales para comparar parámetros de dos poblaciones independientes.
+
+\section{Fundamentos de la Inferencia Bipoblacional}
+
+\begin{definition}[Inferencia Estadística Bipoblacional]
+La \textbf{inferencia estadística bipoblacional} es el conjunto de procedimientos estadísticos que permiten obtener conclusiones sobre la comparación entre dos poblaciones a partir de muestras independientes extraídas de cada una de ellas.
+\end{definition}
+
+\begin{remark}
+La inferencia bipoblacional extiende los conceptos de la estadística inferencial clásica al contexto de comparación. Mientras que en las pruebas de una población se contrasta un parámetro contra un valor hipotético, en las pruebas bipoblacionales se comparan parámetros de dos poblaciones diferentes. Esta extensión es fundamental en campos como la medicina (comparación de tratamientos), ingeniería (comparación de materiales o procesos), y ciencias sociales (comparación de grupos).
+\end{remark}
+
+\begin{definition}[Muestras Independientes]
+Dos muestras se consideran \textbf{independientes} cuando la selección de elementos de una muestra no influye en la selección de elementos de la otra muestra. Esta independencia es crucial para la validez de las pruebas estadísticas bipoblacionales.
+\end{definition}
+
+\section{Comparación de Medias Poblacionales}
+
+\subsection{Prueba Z para Diferencia de Medias}
+
+\begin{theorem}[Prueba Z para Dos Medias con Varianzas Conocidas]
+Sean $X_1, X_2, \ldots, X_{n_1}$ y $Y_1, Y_2, \ldots, Y_{n_2}$ muestras aleatorias independientes de poblaciones normales con medias $\mu_1, \mu_2$ y varianzas conocidas $\sigma_1^2, \sigma_2^2$ respectivamente. Para probar $H_0: \mu_1 - \mu_2 = D_0$, el estadístico de prueba es:
+\[
+Z = \frac{(\overline{X} - \overline{Y}) - D_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}
+\]
+que sigue una distribución normal estándar bajo $H_0$.
+\end{theorem}
+
+\begin{remark}
+Esta prueba se aplica cuando las desviaciones estándar poblacionales son conocidas, situación que puede presentarse en aplicaciones de control de calidad con datos históricos extensos o cuando se asume que los procesos están "en control". El Teorema Central del Límite garantiza la aproximación normal cuando los tamaños muestrales son grandes ($n_1, n_2 \geq 30$), incluso si las poblaciones no son normales.
+\end{remark}
+
+\begin{example}[Comparación de Tiempos de Atención]
+Dos sucursales de un banco reportan tiempos medios de atención de 9.2 minutos ($n_1=20$, $\sigma_1=1.1$) y 8.7 minutos ($n_2=22$, $\sigma_2=1.3$). ¿Existe diferencia significativa al 5\% de significancia?
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: \mu_1 = \mu_2$, $H_1: \mu_1 \neq \mu_2$
+    \item $Z = \frac{9.2-8.7}{\sqrt{1.1^2/20 + 1.3^2/22}} = \frac{0.5}{\sqrt{0.0605 + 0.0769}} = \frac{0.5}{0.371} = 1.35$
+    \item $|Z| = 1.35 < 1.96$, no se rechaza $H_0$
+    \item Valor-p $\approx 0.18 > 0.05$
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que los tiempos medios de atención difieren significativamente.
+\end{example}
+
+\subsection{Prueba t para Diferencia de Medias}
+
+\begin{theorem}[Prueba t para Dos Medias con Varianzas Desconocidas Iguales]
+Sean $X_1, \ldots, X_{n_1}$ y $Y_1, \ldots, Y_{n_2}$ muestras independientes de poblaciones normales con medias $\mu_1, \mu_2$ y varianza común desconocida $\sigma^2$. Para probar $H_0: \mu_1 - \mu_2 = D_0$, el estadístico de prueba es:
+\[
+t = \frac{(\overline{X} - \overline{Y}) - D_0}{S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+\]
+donde $S_p^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2}$ es la varianza muestral combinada.
+Este estadístico sigue una distribución t de Student con $(n_1 + n_2 - 2)$ grados de libertad bajo $H_0$.
+\end{theorem}
+
+\begin{theorem}[Prueba t de Welch para Varianzas Desiguales]
+Cuando no se puede asumir igualdad de varianzas, el estadístico de prueba es:
+\[
+t = \frac{(\overline{X} - \overline{Y}) - D_0}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}
+\]
+Los grados de libertad se calculan mediante la aproximación de Satterthwaite.
+\end{theorem}
+
+\begin{remark}
+La prueba t es robusta a desviaciones moderadas de la normalidad, especialmente cuando los tamaños muestrales son grandes. La prueba t de Welch es más general y se recomienda cuando no se puede verificar la igualdad de varianzas mediante una prueba F previa.
+\end{remark}
+
+\begin{example}[Comparación de Dietas]
+Se mide el nivel de colesterol en dos grupos: dieta A ($n_1=16$, $\overline{x}_1=195$ mg/dL, $s_1=15$) y dieta B ($n_2=14$, $\overline{x}_2=205$ mg/dL, $s_2=20$). ¿Difieren las medias al 5\% de significancia?
+
+\textbf{Solución usando t de Welch:}
+\begin{enumerate}
+    \item $H_0: \mu_1 = \mu_2$, $H_1: \mu_1 \neq \mu_2$
+    \item $t = \frac{195-205}{\sqrt{15^2/16 + 20^2/14}} = \frac{-10}{\sqrt{14.06 + 28.57}} = \frac{-10}{6.53} = -1.53$
+    \item Con gl aproximados $\approx$ 24, $t_{0.025,24} = 2.064$
+    \item $|t| = 1.53 < 2.064$, no se rechaza $H_0$
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que las dietas producen niveles medios diferentes de colesterol.
+\end{example}
+
+\subsection{Prueba t para Muestras Pareadas}
+
+\begin{definition}[Muestras Pareadas]
+Las \textbf{muestras pareadas} son aquellas en las que cada observación de una muestra está directamente relacionada con una observación específica de la otra muestra. Esta relación puede ser natural (mismo individuo medido en dos momentos) o artificial (individuos emparejados por características similares).
+\end{definition}
+
+\begin{theorem}[Prueba t para Muestras Pareadas]
+Para $n$ pares de observaciones $(X_1, Y_1), (X_2, Y_2), \ldots, (X_n, Y_n)$, se definen las diferencias $D_i = X_i - Y_i$. Para probar $H_0: \mu_D = D_0$, el estadístico de prueba es:
+\[
+t = \frac{\overline{D} - D_0}{S_D/\sqrt{n}}
+\]
+que sigue una distribución t de Student con $(n-1)$ grados de libertad bajo $H_0$.
+\end{theorem}
+
+\begin{remark}
+El diseño pareado es especialmente útil para controlar fuentes de variabilidad externa y aumentar la potencia de la prueba. Al calcular diferencias dentro de cada par, se elimina la variabilidad entre unidades experimentales, focalizando la prueba en el efecto de interés.
+\end{remark}
+
+\begin{example}[Efectividad de Tratamiento]
+Se mide la presión arterial de 12 pacientes antes y después de un tratamiento. La media de las diferencias es $\overline{d} = -5$ mmHg con $s_d = 4$ mmHg. ¿El tratamiento reduce significativamente la presión arterial al 5\%?
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: \mu_d = 0$, $H_1: \mu_d < 0$ (prueba unilateral)
+    \item $t = \frac{-5}{4/\sqrt{12}} = \frac{-5}{1.155} = -4.33$
+    \item Con gl = 11, $t_{0.05,11} = -1.796$
+    \item $t = -4.33 < -1.796$, se rechaza $H_0$
+\end{enumerate}
+\textbf{Conclusión:} El tratamiento reduce significativamente la presión arterial.
+\end{example}
+
+\section{Comparación de Proporciones Poblacionales}
+
+\begin{definition}[Proporción Poblacional]
+La \textbf{proporción poblacional} $p$ es la fracción de elementos en una población que poseen una característica específica de interés. Su estimador puntual es la proporción muestral $\hat{p} = x/n$.
+\end{definition}
+
+\begin{theorem}[Prueba Z para Diferencia de Proporciones]
+Para dos muestras independientes de tamaños $n_1, n_2$ con proporciones muestrales $\hat{p}_1, \hat{p}_2$, el estadístico de prueba para $H_0: p_1 - p_2 = D_0$ es:
+\[
+Z = \frac{(\hat{p}_1 - \hat{p}_2) - D_0}{\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}
+\]
+donde $\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}$ es la proporción combinada.
+\end{theorem}
+
+\begin{remark}
+Esta prueba es válida cuando se cumplen las condiciones de muestra grande: $n_1\hat{p} \geq 5$, $n_1(1-\hat{p}) \geq 5$, $n_2\hat{p} \geq 5$, y $n_2(1-\hat{p}) \geq 5$. Esto asegura que la distribución muestral de la diferencia de proporciones se aproxime a la normal.
+\end{remark}
+
+\begin{example}[Acceso a Internet]
+En dos ciudades, 60 de 120 hogares y 52 de 100 hogares tienen acceso a internet. ¿Difieren las proporciones al 1\% de significancia?
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: p_1 = p_2$, $H_1: p_1 \neq p_2$
+    \item $\hat{p}_1 = 60/120 = 0.5$, $\hat{p}_2 = 52/100 = 0.52$
+    \item $\hat{p} = (60+52)/(120+100) = 112/220 = 0.509$
+    \item $Z = \frac{0.5 - 0.52}{\sqrt{0.509 \times 0.491 \times (1/120 + 1/100)}} = \frac{-0.02}{0.067} = -0.30$
+    \item $|Z| = 0.30 < 2.58$ (para $\alpha = 0.01$)
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que las proporciones difieren significativamente.
+\end{example}
+
+\subsection{Prueba Chi-cuadrado para Tablas de Contingencia}
+
+\begin{theorem}[Prueba Chi-cuadrado de Independencia]
+Para una tabla de contingencia $2 \times 2$, el estadístico de prueba para la independencia es:
+\[
+\chi^2 = \sum_{i,j} \frac{(f_{ij}^{obs} - f_{ij}^{esp})^2}{f_{ij}^{esp}}
+\]
+que sigue una distribución chi-cuadrado con $(r-1)(c-1)$ grados de libertad.
+\end{theorem}
+
+\begin{remark}
+La prueba chi-cuadrado de independencia aplicada a una tabla $2 \times 2$ es matemáticamente equivalente a la prueba Z para diferencia de proporciones. Se requiere que todas las frecuencias esperadas sean al menos 5 para garantizar la validez de la aproximación chi-cuadrado.
+\end{remark}
+
+\section{Comparación de Varianzas Poblacionales}
+
+\begin{definition}[Varianza Poblacional]
+La \textbf{varianza poblacional} $\sigma^2$ mide la dispersión de los valores alrededor de la media poblacional. Su estimador puntual es la varianza muestral $S^2$.
+\end{definition}
+
+\begin{theorem}[Prueba F para Comparación de Varianzas]
+Para dos muestras independientes de poblaciones normales, el estadístico de prueba para $H_0: \sigma_1^2 = \sigma_2^2$ es:
+\[
+F = \frac{S_1^2}{S_2^2}
+\]
+donde $S_1^2 \geq S_2^2$. Este estadístico sigue una distribución F con $(n_1-1, n_2-1)$ grados de libertad bajo $H_0$.
+\end{theorem}
+
+\begin{remark}
+La prueba F es extremadamente sensible a desviaciones de la normalidad. Si las poblaciones no son normales, los valores p calculados pueden ser significativamente diferentes de los valores p verdaderos, llevando a conclusiones erróneas. Es crucial verificar la normalidad antes de aplicar esta prueba.
+\end{remark}
+
+\begin{example}[Variabilidad en Especies]
+Se mide la longitud de hojas en dos especies: Especie 1 ($n_1=8$, $s_1=1.2$ cm) y Especie 2 ($n_2=10$, $s_2=2.1$ cm). ¿Difieren las varianzas al 5\% de significancia?
+
+\textbf{Solución:}
+\begin{enumerate}
+    \item $H_0: \sigma_1^2 = \sigma_2^2$, $H_1: \sigma_1^2 \neq \sigma_2^2$
+    \item $F = \frac{s_2^2}{s_1^2} = \frac{2.1^2}{1.2^2} = \frac{4.41}{1.44} = 3.06$
+    \item Con gl = (9,7), $F_{0.025,9,7} \approx 4.82$ y $F_{0.975,9,7} \approx 0.21$
+    \item $0.21 < 3.06 < 4.82$, no se rechaza $H_0$
+\end{enumerate}
+\textbf{Conclusión:} No hay evidencia suficiente para afirmar que las varianzas difieren significativamente.
+\end{example}
+
+\section{Consideraciones Prácticas}
+
+\begin{remark}
+La selección del método apropiado depende de varios factores:
+\begin{itemize}
+    \item **Tipo de parámetro:** media, proporción o varianza
+    \item **Conocimiento de varianzas poblacionales:** conocidas o desconocidas
+    \item **Supuestos de normalidad:** especialmente críticos para pruebas F
+    \item **Independencia de muestras:** fundamental para todas las pruebas
+    \item **Tamaños muestrales:** determinan la aplicabilidad de aproximaciones asintóticas
+\end{itemize}
+\end{remark}
+
+\begin{remark}
+Cuando no se cumplen los supuestos de normalidad, especialmente para la comparación de varianzas, se pueden considerar:
+\begin{itemize}
+    \item **Transformaciones de datos:** logarítmica, raíz cuadrada, etc.
+    \item **Pruebas no paramétricas:** como la prueba de Levene para homogeneidad de varianzas
+    \item **Métodos robustos:** que sean menos sensibles a desviaciones de los supuestos
+\end{itemize}
+\end{remark}
+
+\section{Ejercicios Propuestos}
+
+\begin{enumerate}
+    \item Dos algoritmos de búsqueda muestran tiempos medios de ejecución de 2.3 segundos ($n_1=15$, $s_1=0.4$) y 2.1 segundos ($n_2=18$, $s_2=0.3$). ¿Difieren significativamente al 5\%?
+    
+    \item En una encuesta, 45 de 200 hombres y 38 de 150 mujeres prefieren un producto específico. ¿Difiere la proporción de preferencia entre géneros al 5\%?
+    
+    \item Se mide el peso de 10 personas antes y después de una dieta. Las diferencias promedio son $\overline{d} = -3.2$ kg con $s_d = 2.1$ kg. ¿Es efectiva la dieta al 1\%?
+    
+    \item Dos procesos de manufactura muestran varianzas muestrales de 0.25 ($n_1=12$) y 0.64 ($n_2=15$). ¿Difieren las varianzas poblacionales al 5\%?
+\end{enumerate}

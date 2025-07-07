@@ -1,0 +1,102 @@
+\documentclass[11pt,oneside]{book}
+
+% Idioma y codificación
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Paquetes matemáticos
+\usepackage{amsmath, amssymb, amsthm}
+
+% Paquetes para gráficos y tablas
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Paquetes para gráficos vectoriales y funciones matemáticas
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Paquetes para enlaces y referencias
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Paquete para código fuente (Python, R, etc.)
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\small,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    breaklines=true,
+    language=Python,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red}
+}
+
+% Paquete para colores
+\usepackage{xcolor}
+
+% Para ejercicios y soluciones
+\usepackage[printsolution=true]{exercises}
+
+% Márgenes y formato de página
+\usepackage[a4paper, margin=2.5cm]{geometry}
+
+% Numeración de ecuaciones por sección
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{definition}{Definición}[theorem]
+\newtheorem{example}{Ejemplo}[theorem]
+\newtheorem{problem}{Problema}[theorem]
+\newtheorem{remark}{Observación}[theorem]
+\newtheorem{note}{Nota}[theorem]
+\newtheorem{application}{Aplicación}[theorem]
+
+% Título y autor
+\title{Notas de Estadística Inferencial}
+\author{Andrés Fabián Leal Archila}
+\date{\today}
+\definecolor{engineeringcolor}{RGB}{34,139,34}
+\definecolor{marketingcolor}{RGB}{255,140,0}
+\definecolor{medicinecolor}{RGB}{220,20,60}
+\definecolor{nursingcolor}{RGB}{75,0,130}
+
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% Aquí puedes incluir tus capítulos, por ejemplo: 
+
+\input{contenido}
+\input{descriptiva}
+ \input{normal}
+  \input{estimacion}
+ \input{muestreo} 
+
+ \input{phipunapobl}
+ \input{phipdospobl}
+ \input{anova}
+ \input{reglineal}
+
+ \input{funciones}
+
+ \nocite{*} % Incluye todos los items del archivo BibTeX
+\bibliographystyle{apalike}
+\bibliography{bibliografiaestadistica}
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+
+\end{document}

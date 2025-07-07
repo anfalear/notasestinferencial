@@ -1,0 +1,280 @@
+\chapter{Regresión y Correlación}
+
+El análisis de regresión constituye una de las herramientas estadísticas más fundamentales para el estudio de relaciones entre variables. Su importancia radica en la capacidad de modelar, explicar y predecir el comportamiento de fenómenos complejos a través de relaciones matemáticas. Este capítulo presenta los conceptos esenciales de la regresión lineal simple y múltiple, el análisis de correlación y sus extensiones más relevantes.
+
+\section{Fundamentos de la Regresión Lineal}
+
+\begin{definition}
+El \textbf{análisis de regresión} es una técnica estadística que estudia la dependencia de una variable respecto a otra u otras variables, con el objetivo de estimar o predecir el valor medio de la variable dependiente basándose en los valores conocidos de las variables explicativas.
+\end{definition}
+
+\begin{definition}
+La \textbf{regresión lineal simple} es el tipo más básico de análisis de regresión, que involucra una variable independiente (regresora) $X$ y una variable dependiente (regresada) $Y$, donde la relación entre ambas se aproxima mediante una línea recta.
+\end{definition}
+
+\subsection{Modelo Matemático}
+
+El modelo de regresión lineal simple se expresa como:
+
+$$Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$$
+
+donde:
+\begin{itemize}
+\item $Y_i$ es la variable dependiente o de respuesta
+\item $X_i$ es la variable independiente o regresora
+\item $\beta_0$ es el intercepto, que representa el valor medio de $Y$ cuando $X = 0$
+\item $\beta_1$ es la pendiente, que indica el cambio en $Y$ por cada unidad de cambio en $X$
+\item $\epsilon_i$ es el término de error estocástico
+\end{itemize}
+
+\begin{remark}
+El modelo de regresión lineal simple describe la relación promedio entre las variables, no la relación exacta. El término de error $\epsilon_i$ captura la variabilidad no explicada por el modelo lineal.
+\end{remark}
+
+\subsection{Supuestos del Modelo Clásico}
+
+Para que las inferencias estadísticas sean válidas, el modelo debe satisfacer ciertos supuestos fundamentales:
+
+\begin{theorem}[Supuestos del Modelo Clásico de Regresión Lineal]
+Para una inferencia estadística válida, el modelo de regresión lineal debe cumplir:
+\begin{enumerate}
+\item \textbf{Linealidad en los parámetros}: El modelo es lineal en $\beta_0$ y $\beta_1$
+\item \textbf{Valores fijos de las regresoras}: Los valores de $X$ son fijos o independientes del error
+\item \textbf{Media cero del error}: $E(\epsilon_i) = 0$
+\item \textbf{Homoscedasticidad}: $\text{Var}(\epsilon_i) = \sigma^2$ (constante)
+\item \textbf{No autocorrelación}: $\text{Cov}(\epsilon_i, \epsilon_j) = 0$ para $i \neq j$
+\item \textbf{Normalidad}: $\epsilon_i \sim N(0, \sigma^2)$
+\end{enumerate}
+\end{theorem}
+
+\section{Estimación por Mínimos Cuadrados}
+
+\begin{definition}
+El \textbf{método de mínimos cuadrados ordinarios (MCO)} es el procedimiento que minimiza la suma de los cuadrados de los residuales para obtener los estimadores $b_0$ y $b_1$ de los parámetros poblacionales $\beta_0$ y $\beta_1$.
+\end{definition}
+
+La ecuación de regresión estimada se expresa como:
+$$\hat{Y}_i = b_0 + b_1 X_i$$
+
+Los estimadores de MCO se calculan mediante:
+$$b_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2}$$
+$$b_0 = \bar{Y} - b_1 \bar{X}$$
+
+\begin{theorem}[Propiedades de los Estimadores MCO]
+Bajo los supuestos del modelo clásico, los estimadores de MCO son los mejores estimadores lineales insesgados (MELI), lo que significa que:
+\begin{enumerate}
+\item Son insesgados: $E(b_0) = \beta_0$ y $E(b_1) = \beta_1$
+\item Tienen varianza mínima entre todos los estimadores lineales insesgados
+\item Son consistentes: convergen en probabilidad a los valores verdaderos
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+Un investigador estudia la relación entre gasto en publicidad ($X$, en millones) y ventas ($Y$, en millones) con los siguientes datos:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$X$ & 2 & 3 & 5 & 7 & 9 \\
+\hline
+$Y$ & 4 & 5 & 7 & 10 & 15 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Solución:}
+\begin{enumerate}
+\item Calcular medias: $\bar{X} = 5.2$, $\bar{Y} = 8.2$
+\item Calcular la pendiente:
+$$b_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = 1.46$$
+\item Calcular el intercepto:
+$$b_0 = \bar{Y} - b_1 \bar{X} = 8.2 - 1.46 \times 5.2 = 0.6$$
+\item Ecuación estimada: $\hat{Y} = 0.6 + 1.46X$
+\end{enumerate}
+
+\textbf{Interpretación:} Por cada millón adicional invertido en publicidad, las ventas aumentan en promedio 1.46 millones.
+\end{example}
+
+\section{Análisis de Correlación}
+
+\begin{definition}
+El \textbf{coeficiente de correlación} ($r$) es una medida descriptiva de la fuerza y dirección de la relación lineal entre dos variables numéricas. Toma valores entre -1 y +1.
+\end{definition}
+
+$$r = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum (X_i - \bar{X})^2 \sum (Y_i - \bar{Y})^2}}$$
+
+\begin{remark}
+\textbf{Interpretación del coeficiente de correlación:}
+\begin{itemize}
+\item $r = +1$: Relación lineal positiva perfecta
+\item $r = -1$: Relación lineal negativa perfecta
+\item $r = 0$: No hay relación lineal
+\item $|r| > 0.8$: Correlación fuerte
+\item $0.5 < |r| < 0.8$: Correlación moderada
+\item $|r| < 0.5$: Correlación débil
+\end{itemize}
+\end{remark}
+
+\begin{definition}
+El \textbf{coeficiente de determinación} ($R^2$) representa la proporción de la variabilidad total de la variable dependiente que es explicada por la ecuación de regresión. Se relaciona con el coeficiente de correlación mediante $R^2 = r^2$.
+\end{definition}
+
+\begin{remark}
+\textbf{Correlación vs. Causalidad:} Es fundamental entender que la correlación no implica causalidad. El análisis de regresión y correlación indica cómo las variables están relacionadas, pero las conclusiones sobre causa y efecto deben basarse en el conocimiento experto del área de aplicación.
+\end{remark}
+
+\section{Inferencia Estadística}
+
+\subsection{Pruebas de Hipótesis}
+
+\begin{theorem}[Prueba de Significancia de la Pendiente]
+Para evaluar si existe una relación lineal significativa, se prueba:
+\begin{align}
+H_0: \beta_1 = 0 \quad \text{(no hay relación lineal)}\\
+H_a: \beta_1 \neq 0 \quad \text{(existe relación lineal)}
+\end{align}
+
+El estadístico de prueba es: $t = \frac{b_1}{s_{b_1}}$, donde $s_{b_1}$ es el error estándar de $b_1$.
+\end{theorem}
+
+\section{Análisis de Residuos}
+
+\begin{definition}
+Los \textbf{residuales} son las diferencias entre los valores observados y los valores predichos por el modelo: $e_i = Y_i - \hat{Y}_i$.
+\end{definition}
+
+El análisis de residuos es crucial para:
+\begin{itemize}
+\item Evaluar la bondad del ajuste del modelo
+\item Verificar el cumplimiento de los supuestos
+\item Detectar observaciones atípicas e influyentes
+\end{itemize}
+
+\begin{remark}
+\textbf{Herramientas para el análisis de residuos:}
+\begin{itemize}
+\item Gráficas de residuos vs. valores ajustados (evalúan linealidad y homoscedasticidad)
+\item Gráficas de probabilidad normal (verifican normalidad)
+\item Histogramas de residuos (evalúan distribución)
+\end{itemize}
+\end{remark}
+
+\section{Regresión Múltiple}
+
+\begin{definition}
+La \textbf{regresión múltiple} examina la relación entre una variable dependiente y dos o más variables independientes, extendiendo el concepto de regresión simple para considerar múltiples factores explicativos.
+\end{definition}
+
+El modelo de regresión múltiple se expresa como:
+$$Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \ldots + \beta_p X_{pi} + \epsilon_i$$
+
+\begin{remark}
+En regresión múltiple, $\beta_j$ representa el \textbf{coeficiente de regresión parcial}, que indica el cambio promedio en $Y$ por cada unidad de cambio en $X_j$, manteniendo constantes las demás variables explicativas.
+\end{remark}
+
+\subsection{Multicolinealidad}
+
+\begin{definition}
+La \textbf{multicolinealidad} ocurre cuando dos o más variables explicativas están altamente correlacionadas entre sí, dificultando la estimación precisa de los coeficientes individuales.
+\end{definition}
+
+\begin{remark}
+\textbf{Remedios para la multicolinealidad:}
+\begin{itemize}
+\item Utilizar información a priori
+\item Combinar datos de corte transversal y series temporales
+\item Omitir variables altamente colineales (con precaución)
+\item Transformar los datos
+\item Aplicar técnicas como análisis factorial
+\end{itemize}
+\end{remark}
+
+\section{Extensiones del Modelo Lineal}
+
+\subsection{Modelos Polinomiales}
+
+\begin{definition}
+Los \textbf{modelos de regresión polinomial} incorporan términos de variables independientes elevadas a potencias para modelar relaciones curvilíneas, manteniendo la linealidad en los parámetros.
+\end{definition}
+
+Un modelo cuadrático se expresa como:
+$$\hat{Y} = b_0 + b_1 X + b_2 X^2$$
+
+\subsection{Términos de Interacción}
+
+\begin{definition}
+La \textbf{interacción} ocurre cuando el efecto de una variable independiente sobre la dependiente cambia según el valor de otra variable independiente. Se modela incluyendo términos como $X_1 X_2$.
+\end{definition}
+
+\subsection{Variables Indicadoras}
+
+\begin{definition}
+Las \textbf{variables indicadoras} (dummy) se utilizan para incorporar información cualitativa en modelos de regresión. Una variable con $m$ categorías requiere $m-1$ variables indicadoras binarias.
+\end{definition}
+
+\begin{remark}
+Para evitar la trampa de la variable dicótoma (multicolinealidad perfecta), se debe usar $m-1$ variables indicadoras cuando se incluye un término constante, dejando una categoría como referencia.
+\end{remark}
+
+\section{Regresión con Matrices}
+
+\begin{definition}
+La \textbf{formulación matricial} de la regresión expresada como $\mathbf{Y} = \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}$ proporciona una forma compacta y eficiente de resolver modelos de regresión múltiple.
+\end{definition}
+
+\begin{theorem}[Estimadores MCO en Notación Matricial]
+Los estimadores de mínimos cuadrados ordinarios se obtienen mediante:
+$$\mathbf{b} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y}$$
+donde $\mathbf{X}'$ es la transpuesta de la matriz de diseño $\mathbf{X}$.
+\end{theorem}
+
+\section{Regresión Logística}
+
+\begin{definition}
+La \textbf{regresión logística} se utiliza cuando la variable dependiente es binaria (toma solo dos valores), modelando la probabilidad de que ocurra un evento específico.
+\end{definition}
+
+La ecuación de regresión logística se formula como:
+$$P(Y=1|X_1, \ldots, X_p) = \frac{e^{\beta_0 + \beta_1 X_1 + \ldots + \beta_p X_p}}{1 + e^{\beta_0 + \beta_1 X_1 + \ldots + \beta_p X_p}}$$
+
+\begin{remark}
+En regresión logística, los parámetros se estiman mediante el método de máxima verosimilitud, no por mínimos cuadrados. La interpretación se realiza a través de odds ratios: $e^{\beta_j}$ representa el cambio en las probabilidades relativas por cada unidad de cambio en $X_j$.
+\end{remark}
+
+\section{Aplicaciones Disciplinarias}
+
+\subsection{Ingeniería Industrial}
+\begin{example}
+Se estudia la relación entre tiempo de operación de una máquina ($X$) y número de piezas defectuosas ($Y$) para optimizar procesos de manufactura y predecir tasas de defectos.
+\end{example}
+
+\subsection{Medicina}
+\begin{example}
+Se analiza la relación entre dosis de medicamento ($X$) y reducción de presión arterial ($Y$) para determinar dosificaciones óptimas en tratamientos clínicos.
+\end{example}
+
+\subsection{Economía}
+\begin{example}
+Se modela el ingreso mensual ($Y$) en función de años de escolaridad ($X$) para estudiar el retorno económico de la educación.
+\end{example}
+
+\subsection{Administración}
+\begin{example}
+Una empresa estudia la relación entre gasto en publicidad ($X$) y ventas mensuales ($Y$) para optimizar la asignación de presupuesto publicitario.
+\end{example}
+
+\section{Consideraciones Finales}
+
+El análisis de regresión y correlación constituye una herramienta fundamental en el arsenal estadístico, con aplicaciones que abarcan desde la investigación científica hasta la toma de decisiones empresariales. La comprensión profunda de sus supuestos, limitaciones y extensiones es esencial para su aplicación correcta y la interpretación válida de resultados.
+
+\begin{remark}
+\textbf{Principios clave para recordar:}
+\begin{itemize}
+\item La regresión describe relaciones, no necesariamente causales
+\item Los supuestos del modelo deben verificarse siempre
+\item El análisis de residuos es fundamental para validar el modelo
+\item La selección del modelo apropiado depende del tipo de variable dependiente
+\item La interpretación debe realizarse en el contexto del problema específico
+\end{itemize}
+\end{remark}
+

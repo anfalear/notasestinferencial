@@ -1,0 +1,144 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Contenido del curso}{5}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Estadística Descriptiva}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introducción}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Conceptos Fundamentales}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Organización y Presentación de Datos}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Medidas de Tendencia Central}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Medidas de Dispersión}{9}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Medidas de Posición y Forma}{9}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Representación Gráfica}{10}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Teoremas Fundamentales}{10}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Aplicaciones Prácticas}{10}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Ingeniería y Control de Calidad}{10}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Medicina y Epidemiología}{11}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Marketing y Análisis de Mercado}{11}{subsection.2.9.3}%
+\contentsline {section}{\numberline {2.10}Ejemplo Integrador}{11}{section.2.10}%
+\contentsline {section}{\numberline {2.11}Herramientas Computacionales}{11}{section.2.11}%
+\contentsline {section}{\numberline {2.12}Conclusiones}{11}{section.2.12}%
+\contentsline {chapter}{\numberline {3}Distribución Normal y Distribuciones Muestrales}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Fundamentos Teóricos}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}El Teorema Central del Límite}{13}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Distribuciones Muestrales}{13}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Distribución Muestral de la Media}{13}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Distribución Muestral de la Proporción}{14}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Otras Distribuciones Muestrales Importantes}{14}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Aplicaciones Prácticas}{14}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Ingeniería y Control de Calidad}{14}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Medicina y Investigación Clínica}{15}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Marketing y Estudios de Mercado}{15}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Estandarización y Cálculo de Probabilidades}{15}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Simulación y Verificación Computacional}{16}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Ejercicios y Problemas}{16}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Conclusiones}{17}{section.3.8}%
+\contentsline {chapter}{\numberline {4}Estimación}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estimación para la Media Poblacional}{18}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Estimación Puntual de la Media}{18}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Estimación por Intervalos para la Media}{19}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Supuestos y Condiciones de Aplicabilidad}{20}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Estimación para la Proporción Poblacional}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Estimación Puntual de la Proporción}{20}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Estimación por Intervalos para la Proporción}{20}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Estimación para la Varianza Poblacional}{21}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Estimación Puntual de la Varianza}{21}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Estimación por Intervalos para la Varianza}{21}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Interpretación y Aplicaciones de los Intervalos de Confianza}{22}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Determinación del Tamaño de Muestra}{22}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Consideraciones Éticas y Prácticas}{23}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Fundamentos del Muestreo Estadístico}{24}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{24}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Conceptos Fundamentales}{24}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Población y Muestra}{24}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Representatividad y Variabilidad}{25}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Ramas de la Estadística}{25}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Estadísticos y Parámetros}{25}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Variables Estadísticas y Escalas de Medición}{26}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Técnicas de Muestreo}{26}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Muestreo Probabilístico}{26}{subsection.5.5.1}%
+\contentsline {subsubsection}{Muestreo Aleatorio Simple}{26}{section*.3}%
+\contentsline {subsubsection}{Muestreo Sistemático}{27}{section*.4}%
+\contentsline {subsubsection}{Muestreo Estratificado}{27}{section*.5}%
+\contentsline {subsubsection}{Muestreo por Conglomerados}{27}{section*.6}%
+\contentsline {subsection}{\numberline {5.5.2}Muestreo No Probabilístico}{27}{subsection.5.5.2}%
+\contentsline {section}{\numberline {5.6}Aplicaciones Multidisciplinarias}{28}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Ingeniería y Control de Calidad}{28}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Ciencias de la Salud}{28}{subsection.5.6.2}%
+\contentsline {subsection}{\numberline {5.6.3}Ciencias Sociales y Marketing}{28}{subsection.5.6.3}%
+\contentsline {subsection}{\numberline {5.6.4}Economía y Finanzas}{28}{subsection.5.6.4}%
+\contentsline {section}{\numberline {5.7}Perspectiva Histórica y Desarrollo}{28}{section.5.7}%
+\contentsline {section}{\numberline {5.8}Ejemplos Prácticos de Implementación}{29}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Casos de Estudio en el Contexto Colombiano}{29}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Ejercicios de Simulación}{29}{subsection.5.8.2}%
+\contentsline {section}{\numberline {5.9}Herramientas Computacionales}{30}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Implementación en Python}{30}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Implementación en R}{30}{subsection.5.9.2}%
+\contentsline {section}{\numberline {5.10}Consideraciones Éticas y Metodológicas}{31}{section.5.10}%
+\contentsline {section}{\numberline {5.11}Conclusiones}{31}{section.5.11}%
+\contentsline {chapter}{\numberline {6}Prueba de Hipótesis para una Población}{32}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introducción y Conceptos Fundamentales}{32}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Errores en las Pruebas de Hipótesis}{32}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Metodología de la Prueba de Hipótesis}{33}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}Prueba de Hipótesis para la Media Poblacional}{33}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Caso 1: Desviación Estándar Poblacional Conocida}{33}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Caso 2: Desviación Estándar Poblacional Desconocida}{34}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Prueba de Hipótesis para la Proporción Poblacional}{34}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Prueba de Hipótesis para la Varianza Poblacional}{35}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Consideraciones Prácticas y Recomendaciones}{36}{section.6.5}%
+\contentsline {section}{\numberline {6.6}Ejercicios Propuestos}{36}{section.6.6}%
+\contentsline {chapter}{\numberline {7}Pruebas de Hipótesis para Dos Poblaciones}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Fundamentos de la Inferencia Bipoblacional}{37}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Comparación de Medias Poblacionales}{37}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Prueba Z para Diferencia de Medias}{37}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Prueba t para Diferencia de Medias}{38}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Prueba t para Muestras Pareadas}{39}{subsection.7.2.3}%
+\contentsline {section}{\numberline {7.3}Comparación de Proporciones Poblacionales}{39}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Prueba Chi-cuadrado para Tablas de Contingencia}{40}{subsection.7.3.1}%
+\contentsline {section}{\numberline {7.4}Comparación de Varianzas Poblacionales}{40}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Consideraciones Prácticas}{41}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Ejercicios Propuestos}{41}{section.7.6}%
+\contentsline {chapter}{\numberline {8}Análisis de la Varianza (ANOVA)}{42}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Fundamentos del Análisis de Varianza}{42}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Fundamento Matemático del Método}{42}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Supuestos del Modelo ANOVA}{43}{subsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.1.3}El Estadístico F y su Interpretación}{43}{subsection.8.1.3}%
+\contentsline {section}{\numberline {8.2}ANOVA de Un Factor}{43}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Diseño Completamente Aleatorizado}{43}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}Descomposición de la Varianza}{43}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}Prueba de Hipótesis en ANOVA}{44}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}ANOVA de Dos Factores con Replicación}{44}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}Diseño Factorial Completo}{45}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}Tabla ANOVA Extendida}{45}{subsection.8.3.2}%
+\contentsline {section}{\numberline {8.4}ANOVA de Dos Factores sin Replicación}{45}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Limitaciones del Diseño}{45}{subsection.8.4.1}%
+\contentsline {section}{\numberline {8.5}Aplicaciones Prácticas del ANOVA}{45}{section.8.5}%
+\contentsline {subsection}{\numberline {8.5.1}Aplicaciones por Disciplina}{45}{subsection.8.5.1}%
+\contentsline {subsection}{\numberline {8.5.2}Implementación Computacional}{46}{subsection.8.5.2}%
+\contentsline {section}{\numberline {8.6}Metodología del Análisis ANOVA}{46}{section.8.6}%
+\contentsline {section}{\numberline {8.7}Consideraciones Adicionales}{46}{section.8.7}%
+\contentsline {section}{\numberline {8.8}Ejercicios Propuestos}{47}{section.8.8}%
+\contentsline {chapter}{\numberline {9}Regresión y Correlación}{48}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Fundamentos de la Regresión Lineal}{48}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}Modelo Matemático}{48}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}Supuestos del Modelo Clásico}{49}{subsection.9.1.2}%
+\contentsline {section}{\numberline {9.2}Estimación por Mínimos Cuadrados}{49}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Análisis de Correlación}{50}{section.9.3}%
+\contentsline {section}{\numberline {9.4}Inferencia Estadística}{50}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Pruebas de Hipótesis}{50}{subsection.9.4.1}%
+\contentsline {section}{\numberline {9.5}Análisis de Residuos}{51}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Regresión Múltiple}{51}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Multicolinealidad}{51}{subsection.9.6.1}%
+\contentsline {section}{\numberline {9.7}Extensiones del Modelo Lineal}{52}{section.9.7}%
+\contentsline {subsection}{\numberline {9.7.1}Modelos Polinomiales}{52}{subsection.9.7.1}%
+\contentsline {subsection}{\numberline {9.7.2}Términos de Interacción}{52}{subsection.9.7.2}%
+\contentsline {subsection}{\numberline {9.7.3}Variables Indicadoras}{52}{subsection.9.7.3}%
+\contentsline {section}{\numberline {9.8}Regresión con Matrices}{52}{section.9.8}%
+\contentsline {section}{\numberline {9.9}Regresión Logística}{52}{section.9.9}%
+\contentsline {section}{\numberline {9.10}Aplicaciones Disciplinarias}{53}{section.9.10}%
+\contentsline {subsection}{\numberline {9.10.1}Ingeniería Industrial}{53}{subsection.9.10.1}%
+\contentsline {subsection}{\numberline {9.10.2}Medicina}{53}{subsection.9.10.2}%
+\contentsline {subsection}{\numberline {9.10.3}Economía}{53}{subsection.9.10.3}%
+\contentsline {subsection}{\numberline {9.10.4}Administración}{53}{subsection.9.10.4}%
+\contentsline {section}{\numberline {9.11}Consideraciones Finales}{53}{section.9.11}%
+\contentsline {chapter}{\numberline {10}Anexo: Funciones de Python y R para Estadística Inferencial}{54}{chapter.10}%
+\contentsline {section}{\numberline {10.1}1. Pruebas de hipótesis para una media}{54}{section.10.1}%
+\contentsline {chapter}{Bibliografía}{59}{chapter*.32}%
