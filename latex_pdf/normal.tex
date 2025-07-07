@@ -28,6 +28,73 @@ La distribución normal, también conocida como campana de Gauss, posee propieda
 Un ingeniero de control de calidad monitorea el peso de componentes electrónicos en una línea de producción. Si los pesos siguen una distribución normal con $\mu = 50$ gramos y $\sigma = 2$ gramos, podemos establecer que aproximadamente el 95\% de los componentes tendrán un peso entre 46 y 54 gramos ($\mu \pm 2\sigma$). Esta propiedad es fundamental para establecer límites de control en gráficas de control estadístico.
 \end{example}
 
+Aunque esto se demostrará más adelante, es necesario saber que existen unos test para verificar si una variable numérica es normal, esto se muestra en el siguiente teorema: 
+
+\begin{theorem}[Implementación de Test de Normalidad]
+Sea \( X = \{x_1, x_2, \ldots, x_n\} \) una muestra aleatoria de una variable continua. Para verificar si \( X \) proviene de una distribución normal, se pueden aplicar los siguientes test estadísticos:
+
+\begin{itemize}
+    \item \textbf{Test de Shapiro-Wilk:} Evalúa la hipótesis nula \( H_0 \): "La muestra proviene de una distribución normal". Se calcula el estadístico \( W \) y su p-valor.
+    \item \textbf{Test de Kolmogorov-Smirnov:} Compara la función de distribución empírica de la muestra con la función de distribución acumulada de una normal estándar.
+    \item \textbf{Test de Anderson-Darling:} Es una modificación del test de Kolmogorov-Smirnov, dando más peso a los extremos de la distribución.
+    \item \textbf{Test de Jarque-Bera:} Evalúa la asimetría y curtosis de la muestra respecto a una normal.
+\end{itemize}
+
+\textbf{Implementación en Python:}
+
+\begin{verbatim}
+from scipy import stats
+
+# Supongamos que 'data' es la variable a analizar
+
+# Shapiro-Wilk
+shapiro_stat, shapiro_p = stats.shapiro(data)
+
+# Kolmogorov-Smirnov (comparando con normal estándar)
+ks_stat, ks_p = stats.kstest(data, 'norm', args=(data.mean(), data.std()))
+
+# Anderson-Darling
+anderson_result = stats.anderson(data, dist='norm')
+
+# Jarque-Bera
+jb_stat, jb_p = stats.jarque_bera(data)
+\end{verbatim}
+
+\textbf{Decisión:} Si el p-valor es menor que el nivel de significancia (\( \alpha \)), se rechaza la hipótesis nula de normalidad. Para Anderson-Darling, se compara el estadístico con los valores críticos proporcionados por el test.
+\end{theorem}
+
+\begin{remark}
+\textbf{Aplicación práctica y criterios de los métodos:}
+
+Supongamos que un investigador recolecta los tiempos (en minutos) que tardan 50 estudiantes en resolver un examen. Para determinar si estos tiempos siguen una distribución normal, puede aplicar los siguientes test, considerando sus criterios y usos más comunes:
+
+\begin{itemize}
+    \item \textbf{Shapiro-Wilk:}
+    \begin{itemize}
+        \item \textit{Criterio:} Recomendado para muestras pequeñas y medianas (\( n \leq 2000 \)), sensible a desviaciones de normalidad.
+        \item \textit{Uso común:} Psicología, medicina, ciencias sociales y educación, especialmente cuando el tamaño muestral es limitado.
+    \end{itemize}
+    \item \textbf{Kolmogorov-Smirnov:}
+    \begin{itemize}
+        \item \textit{Criterio:} Adecuado para muestras grandes, aunque menos potente que otros tests; requiere especificar los parámetros de la normal.
+        \item \textit{Uso común:} Comparación de distribuciones empíricas, validación en estudios de ingeniería y economía.
+    \end{itemize}
+    \item \textbf{Anderson-Darling:}
+    \begin{itemize}
+        \item \textit{Criterio:} Más sensible a los extremos (colas) de la distribución, útil para detectar valores atípicos.
+        \item \textit{Uso común:} Control de calidad, análisis financiero y estudios donde los valores extremos son relevantes.
+    \end{itemize}
+    \item \textbf{Jarque-Bera:}
+    \begin{itemize}
+        \item \textit{Criterio:} Basado en asimetría y curtosis; apropiado para muestras grandes (\( n > 30 \)).
+        \item \textit{Uso común:} Series temporales, econometría y análisis financiero, especialmente en estudios de retornos de activos.
+    \end{itemize}
+\end{itemize}
+
+Por ejemplo, si el p-valor del test de Shapiro-Wilk es 0.03 y el nivel de significancia es 0.05, se concluye que los datos no siguen una distribución normal. Este procedimiento es fundamental antes de aplicar pruebas paramétricas en diversas áreas científicas y profesionales.
+\end{remark}
+
+
 \section{El Teorema Central del Límite}
 
 El Teorema Central del Límite representa una de las herramientas más poderosas de la estadística, proporcionando la justificación teórica para el uso de la distribución normal en numerosas aplicaciones prácticas.

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  7 JUL 2025 13:17
+This is LuaHBTeX, Version 1.22.0 (MiKTeX 25.4) (format=lualatex 2025.7.7)  7 JUL 2025 17:44
  restricted system commands enabled.
 **anfalearnotasestadistica.tex
 (./anfalearnotasestadistica.tex
@@ -1285,15 +1285,24 @@ Capítulo 3.
 [12
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+5.
+ (C:/Users/anfalear/AppData/Local/Programs/MiKTeX/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
-LaTeX Info: Redefining \. on input line 77.
-LaTeX Info: Redefining \% on input line 77.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
 [13]
 
-LaTeX Info: Redefining \. on input line 129.
-LaTeX Info: Redefining \% on input line 129.
+LaTeX Info: Redefining \. on input line 126.
+LaTeX Info: Redefining \% on input line 126.
 [14]
-Overfull \hbox (23.8925pt too wide) in paragraph at lines 147--148
+
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+[15]
+Overfull \hbox (23.8925pt too wide) in paragraph at lines 214--215
 []\T1/lmr/m/it/10.95 Pa-ra una mues-tra de $\OML/cmm/m/it/10.95 n \OT1/cmr/m/n/
 10.95 = 100$ \T1/lmr/m/it/10.95 clien-tes, la dis-tri-bu-ción de la me-dia mues
 -tral se-rá $\OML/cmm/m/it/10.95 N\OT1/cmr/m/n/10.95 (7[]5\OML/cmm/m/it/10.95 
@@ -1302,70 +1311,65 @@ Overfull \hbox (23.8925pt too wide) in paragraph at lines 147--148
 
 
 
-LaTeX Info: Redefining \. on input line 171.
-LaTeX Info: Redefining \% on input line 171.
-[15]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-87.
- (C:/Users/anfalear/AppData/Local/Programs/MiKTeX/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
+[16]
 
-LaTeX Info: Redefining \. on input line 232.
-LaTeX Info: Redefining \% on input line 232.
-[16]) (./estimacion.tex
+LaTeX Info: Redefining \. on input line 271.
+LaTeX Info: Redefining \% on input line 271.
+[17]) (./estimacion.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[17]
+[18]
 Capítulo 4.
 
 
-[18
+[19
 
 ]
 
 LaTeX Info: Redefining \. on input line 97.
 LaTeX Info: Redefining \% on input line 97.
-[19]
+[20]
 
 LaTeX Info: Redefining \. on input line 151.
 LaTeX Info: Redefining \% on input line 151.
-[20]
+[21]
 
 LaTeX Info: Redefining \. on input line 207.
 LaTeX Info: Redefining \% on input line 207.
-[21]
+[22]
 
 LaTeX Info: Redefining \. on input line 261.
 LaTeX Info: Redefining \% on input line 261.
-[22]) (./muestreo.tex
+[23]) (./muestreo.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[23]
+[24]
 Capítulo 5.
 
 
-[24
+[25
 
 ]
 
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
-[25]
+[26]
 
 LaTeX Info: Redefining \. on input line 168.
 LaTeX Info: Redefining \% on input line 168.
-[26]
+[27]
 
 LaTeX Info: Redefining \. on input line 227.
 LaTeX Info: Redefining \% on input line 227.
-[27]
+[28]
 
 LaTeX Info: Redefining \. on input line 271.
 LaTeX Info: Redefining \% on input line 271.
-[28]
+[29]
 Underfull \hbox (badness 3815) in paragraph at lines 291--292
 []\T1/lmr/m/n/10.95 Se-lec-ción de uni-da-des pri-ma-rias
  []
@@ -1379,41 +1383,41 @@ Underfull \hbox (badness 1168) in paragraph at lines 297--298
 
 LaTeX Info: Redefining \. on input line 314.
 LaTeX Info: Redefining \% on input line 314.
-[29]
+[30]
 
 LaTeX Info: Redefining \. on input line 371.
 LaTeX Info: Redefining \% on input line 371.
-[30]) (./phipunapobl.tex
+[31]) (./phipunapobl.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[31]
+[32]
 Capítulo 6.
 
 
-[32
+[33
 
 ]
 
 LaTeX Info: Redefining \. on input line 93.
 LaTeX Info: Redefining \% on input line 93.
-[33]
+[34]
 
 LaTeX Info: Redefining \. on input line 151.
 LaTeX Info: Redefining \% on input line 151.
-[34]
+[35]
 
 LaTeX Info: Redefining \. on input line 202.
 LaTeX Info: Redefining \% on input line 202.
-[35]) (./phipdospobl.tex
+[36]) (./phipdospobl.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[36]
+[37]
 Capítulo 7.
 
 
-[37
+[38
 
 ]
 Overfull \hbox (3.06584pt too wide) in paragraph at lines 51--52
@@ -1426,7 +1430,7 @@ it/10.95 Sean $\OML/cmm/m/it/10.95 X[]; [] ; X[]$
 
 LaTeX Info: Redefining \. on input line 88.
 LaTeX Info: Redefining \% on input line 88.
-[38]
+[39]
 Overfull \hbox (78.84099pt too wide) in paragraph at lines 91--92
 [][]\T1/lmr/bx/n/10.95 Teo-re-ma 7.4 \T1/lmr/m/n/10.95 (Prue-ba t pa-ra Mues-tra
 s Pa-rea-das)\T1/lmr/bx/n/10.95 . []\T1/lmr/m/it/10.95 Pa-ra $\OML/cmm/m/it/10.
@@ -1441,73 +1445,73 @@ m/it/10.95 ,
 
 LaTeX Info: Redefining \. on input line 141.
 LaTeX Info: Redefining \% on input line 141.
-[39]
+[40]
 
 LaTeX Info: Redefining \. on input line 190.
 LaTeX Info: Redefining \% on input line 190.
-[40]) (./anova.tex
+[41]) (./anova.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[41]
+[42]
 Capítulo 8.
 
 
-[42
+[43
 
 ]
 
 LaTeX Info: Redefining \. on input line 97.
 LaTeX Info: Redefining \% on input line 97.
-[43]
+[44]
 
 LaTeX Info: Redefining \. on input line 158.
 LaTeX Info: Redefining \% on input line 158.
-[44]
+[45]
 
 LaTeX Info: Redefining \. on input line 227.
 LaTeX Info: Redefining \% on input line 227.
-[45]
+[46]
 
 LaTeX Info: Redefining \. on input line 288.
 LaTeX Info: Redefining \% on input line 288.
-[46]) (./reglineal.tex
+[47]) (./reglineal.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[47]
+[48]
 Capítulo 9.
 
 
-[48
+[49
 
 ]
 
 LaTeX Info: Redefining \. on input line 96.
 LaTeX Info: Redefining \% on input line 96.
-[49]
+[50]
 
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
-[50]
+[51]
 
 LaTeX Info: Redefining \. on input line 201.
 LaTeX Info: Redefining \% on input line 201.
-[51]
+[52]
 
 LaTeX Info: Redefining \. on input line 249.
 LaTeX Info: Redefining \% on input line 249.
-[52]) (./funciones.tex
+[53]) (./funciones.tex
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[53]
+[54]
 Capítulo 10.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 7.
 
 
-[54
+[55
 
 ]
 
@@ -1516,42 +1520,42 @@ LaTeX Info: Redefining \% on input line 111.
 
 Overfull \hbox (28.68103pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10.95 CA-PÍ-TU-LO 10.  ANE-XO: FUN-CIO-NES DE PYTHON Y R PA-RA ES-
-TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 55
+TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 56
  []
 
-[55]
+[56]
 
 LaTeX Info: Redefining \. on input line 175.
 LaTeX Info: Redefining \% on input line 175.
 
 Overfull \hbox (28.68103pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10.95 CA-PÍ-TU-LO 10.  ANE-XO: FUN-CIO-NES DE PYTHON Y R PA-RA ES-
-TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 56
+TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 57
  []
 
-[56]
+[57]
 
 LaTeX Info: Redefining \. on input line 235.
 LaTeX Info: Redefining \% on input line 235.
 
 Overfull \hbox (28.68103pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10.95 CA-PÍ-TU-LO 10.  ANE-XO: FUN-CIO-NES DE PYTHON Y R PA-RA ES-
-TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 57
+TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 58
  []
 
-[57]) (./anfalearnotasestadistica.bbl
+[58]) (./anfalearnotasestadistica.bbl
 
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
 Overfull \hbox (28.68103pt too wide) has occurred while \output is active
 \T1/lmr/m/sl/10.95 CA-PÍ-TU-LO 10.  ANE-XO: FUN-CIO-NES DE PYTHON Y R PA-RA ES-
-TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 58
+TA-DÍS-TI-CA IN-FE-REN-CIAL \T1/lmr/m/n/10.95 59
  []
 
-[58])
+[59])
 
-[59
+[60
 
 ] (./anfalearnotasestadistica.aux
 LaTeX Info: Redefining \. on input line 11.
@@ -1561,66 +1565,57 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-06-09>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `anfalearnotasestadistica.out' has changed
-.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `anfalearnotasestadistica.out':
-(rerunfilecheck)             Before: 1AC7A896574B6A308E060718B87CE9C8;29892
-(rerunfilecheck)             After:  C544E37659543A058418E54F84214504;29892.
+Package rerunfilecheck Info: File `anfalearnotasestadistica.out' has not change
+d.
+(rerunfilecheck)             Checksum: C544E37659543A058418E54F84214504;29892.
 )
 
 Here is how much of LuaTeX's memory you used:
- 37626 strings out of 470205
+ 37633 strings out of 470205
  125129,1648299 words of node,token memory allocated
  984 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 4 sub_mlist, 1 glyph, 157 attribute
 , 56 glue_spec, 80 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:2,2:1609,3:501,4:398,5:707,6:149,7:7748,8:71,9:812,10:13,11:11
+   avail lists: 1:2,2:1609,3:501,4:398,5:707,6:149,7:8169,8:71,9:812,10:13,11:11
 76
- 64348 multiletter control sequences out of 65536+600000
- 68 fonts using 4422759 bytes
+ 64352 multiletter control sequences out of 65536+600000
+ 69 fonts using 4485439 bytes
  84i,12n,87p,744b,692s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C
-:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-bx10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmex10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cmextra/cmex8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/anfalear/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/anfalear/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/anfa
-lear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C
-:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
-onts/cm/cmr6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/anfalear/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anfalear/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/anfalear/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/anfalear/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/anfale
-ar/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/anfal
-ear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/anfa
-lear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/anf
-alear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/anf
-alear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/anf
-alear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/a
-nfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/
-anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/User
-s/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Us
-ers/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/
-Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb>
-Output written on anfalearnotasestadistica.pdf (60 pages, 814726 bytes).
+{C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
+:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:
+/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmex10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cmextra/cmex8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/anfalear/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/anfalear/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/anfal
+ear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:
+/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
+10.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><C:/Users/anfalear/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/anfalear/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/anfalear/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/anfalear/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/anfalear/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/anfalear/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/anfalea
+r/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/anfale
+ar/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/anfal
+ear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/anfa
+lear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/anfa
+lear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/anfa
+lear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/an
+falear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/a
+nfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users
+/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Use
+rs/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/U
+sers/anfalear/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on anfalearnotasestadistica.pdf (61 pages, 822732 bytes).
 
-PDF statistics: 1524 PDF objects out of 1728 (max. 8388607)
- 634 named destinations out of 1000 (max. 131072)
+PDF statistics: 1534 PDF objects out of 1728 (max. 8388607)
+ 637 named destinations out of 1000 (max. 131072)
  1128 words of extra memory for PDF output out of 10000 (max. 100000000)
 
