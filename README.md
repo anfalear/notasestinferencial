@@ -52,7 +52,7 @@
 
 # Accede a las notas completas desde aquí:  
 
-# 📘 \*\*\[Ver o descargar el PDF](https://github.com/anfalear/notasestinferencial/raw/main/latex\_pdf/notasestadistica.pdf)\*\*
+# 📘 \*\*\[Ver o descargar el PDF](https://github.com/anfalear/notasestinferencial/raw/main/latex\_pdf/anfalearnotasestadistica.pdf)\*\*
 
 # 
 
