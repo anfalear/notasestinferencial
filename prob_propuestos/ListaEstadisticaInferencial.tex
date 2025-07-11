@@ -1,0 +1,519 @@
+\documentclass[addpoints,12pt]{exam}
+\usepackage[paperheight=13in,paperwidth=8.5in,left=2cm,right=2cm,top=1.5cm,bottom=2cm]{geometry}
+
+% Idioma y codificación
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{lmodern}
+
+% Matemáticas y símbolos
+\usepackage{amsmath,amsthm,amssymb,amsfonts,mathrsfs}
+
+% Tablas y columnas
+\usepackage{array,booktabs,multirow,tabularx,colortbl}
+
+% Gráficos y diagramas
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{decorations.markings,arrows,babel,backgrounds,calc,intersections,positioning}
+\usepackage{pstricks,pstricks-add,pst-math,pst-xkey}
+\usepackage{circuitikz}
+
+% Colores
+\usepackage{xcolor}
+\definecolor{unabcolor}{RGB}{255, 140, 0}
+\definecolor{unabcolorb}{RGB}{201, 149, 0}
+
+% Cajas y recuadros
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{listingsutf8,raster,skins,most,theorems,breakable}
+
+% Otros paquetes útiles
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{url}
+\usepackage{changepage}
+\usepackage{fancybox}
+\usepackage{varwidth}
+
+% Comandos personalizados
+\newcommand{\imp}{\rightarrow}
+\newcommand{\bimp}{\leftrightarrow}
+\newcommand{\y}{\wedge}
+\newcommand{\un}{\vee}
+\newcommand{\xun}{\vee}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\I}{{\mathbb I}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\FF}{{\mathbb F}}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\tiempo}{1.5 horas}
+
+% Ejemplo de caja personalizada
+\newtcolorbox{myproof}{detach title,before upper={\tcbtitle\quad},colback=unabcolor!5!white,
+  colframe=unabcolor!75!black,coltitle=red!85!black,title=\textbf{Solución:},enhanced, breakable,
+  overlay broken = {
+    \draw[line width=0.2mm, unabcolor!75!black, rounded corners]
+    (frame.north west) rectangle (frame.south east);}}
+
+% Teoremas y definiciones
+\theoremstyle{plain}
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{coro}[theorem]{Corolario}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{prop}[theorem]{Proposición}
+\newtheorem{affir}[theorem]{Afirmación}
+\theoremstyle{remark}
+\newtheorem{rem}[theorem]{Observación}
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{prob}[theorem]{Problema}
+\newtheorem{definition}[theorem]{Definición}
+
+% Separación de columnas
+\setlength\columnsep{1.5cm}
+
+
+%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Instrucciones
+
+
+ \usepackage{varwidth}
+ \newtcolorbox{mybox}[2][]{enhanced,
+before skip=2mm,after skip=2mm,
+colback=white,colframe=unabcolor,boxrule=.8pt,
+attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=unabcolor]
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[left color=unabcolor,right color=unabcolor,
+middle color=unabcolor]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},
+fonttitle=\bfseries,
+title={#2},#1}
+
+\makeatletter
+\let\old@rule\@rule
+\def\@rule[#1]#2#3{\textcolor{rulecolor}{\old@rule[#1]{#2}{#3}}}
+\makeatother
+
+
+\begin{document}
+\sf
+\boxedpoints
+\pointname{ Puntos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Examen A  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Lista de ejercicios propuestos}
+
+ \begin{mybox}{Instrucciones}
+ Esta lista le permitirá preparar los exámenes correspondientes al curso. 
+\end{mybox}
+
+
+
+\begin{questions}
+\question Considere un conjunto de datos real y desarrolle las siguientes actividades:
+
+\begin{parts}
+    \part Realice un análisis exploratorio de los datos. Identifique y clasifique cada variable según su tipo: categórica nominal, categórica ordinal, numérica discreta o numérica continua.
+    
+    \part Cuente la cantidad de datos faltantes por cada variable. Genere un mapa visual de los datos faltantes. Seleccione al menos tres variables categóricas y tres variables numéricas, y cree un nuevo \textit{dataframe} eliminando todas las filas con datos faltantes en estas variables seleccionadas.
+    
+    \part Genere gráficos apropiados para explorar el nuevo \textit{dataframe}. Incluya, como mínimo, diagramas de caja, histogramas, diagramas de barras y gráficos de torta. Extraiga conclusiones relevantes a partir de estos gráficos.
+    
+    \part Analice los valores atípicos (\textit{outliers}) en las variables numéricas utilizando el rango intercuartílico. Evalúe y justifique si es conveniente eliminar estos valores del análisis.
+    
+    \part Realice pruebas de normalidad para las variables numéricas. Seleccione una variable que muestre un comportamiento aproximadamente normal y visualícela mediante un gráfico Q-Q.
+    
+    \part Para la variable seleccionada con distribución aproximadamente normal, determine y muestre gráficamente los intervalos correspondientes a la regla empírica (68\%, 95\% y 99\%).
+    
+    \part Realice cálculos relevantes para su estudio utilizando la distribución normal y la distribución normal inversa.
+    
+    \part A partir de la base de datos original, extraiga muestras de 100 observaciones utilizando los siguientes métodos de muestreo: aleatorio simple, aleatorio sistemático, estratificado y por conglomerados.
+\end{parts}
+
+ 
+  \question  Se desea estimar la altura promedio de estudiantes universitarios. En una muestra de 50 estudiantes, se obtuvo una media de 170 cm. Se sabe que la desviación estándar poblacional es de 10 cm. Construye un intervalo de confianza del 95\% para la media poblacional.
+ 
+ \question Un examen nacional tiene una desviación estándar histórica de 15 puntos. En una muestra aleatoria de 100 estudiantes, la calificación promedio fue de 75 puntos. Determina un intervalo de confianza del 90\% para la media poblacional.
+ 
+ \question Una fábrica produce tornillos con una desviación estándar de 0.2 cm. En una inspección de calidad, se midieron 30 tornillos y se obtuvo un diámetro promedio de 2.5 cm. Calcula un intervalo de confianza del 99\% para el diámetro promedio real.
+ 
+ \question Un fabricante afirma que sus baterías tienen una desviación estándar de 1.5 horas. En una prueba con 25 baterías, la duración promedio fue de 12 horas. Encuentra un intervalo de confianza del 95\% para la duración media poblacional.
+ 
+ \question Un fertilizante se probó en 40 plantas, observándose un crecimiento promedio de 20 cm. Si la desviación estándar poblacional del crecimiento es de 4 cm, construye un intervalo de confianza del 95% para la media real del crecimiento.
+
+
+
+ \question Una cadena de cafeterías desea estimar la temperatura promedio (°C) del café que sirve a sus clientes. Se tomó una muestra aleatoria de 12 tazas donde la media fue de 84°C, y la desviación estándar 5°C. Con un nivel de confianza del 95\% calcule el intervalo de confianza para la temperatura media poblacional del café.  
+
+ \question Un fabricante prueba la duración (horas) de la batería de un nuevo modelo de smartphone bajo uso estándar. Tomó una muestra aleatoria de 15 dispositivos donde obtuvo una media de 8 horas con una desviación estándar de 1.2 horas. Con un nivel de confianza del 90\%  determine el intervalo de confianza para la duración media real de la batería.  
+
+ \question Un equipo agrícola estudia el efecto de un fertilizante experimental en la altura (cm) de plántulas de maíz.  Se tomó una muestra aleatoria de 10 plantas con una media de 25 cm y una desviación estándar de 3 cm.  Construya el intervalo de confianza para la altura media poblacional de las plántulas con un nivel de confianza del 99\%.  
+
+ \question Una pizzería quiere verificar si su tiempo promedio de entrega (minutos) es menor a 35 minutos. Se tuvo en cuenta una muestra aleatoria de 20 entregas recientes las cuales tuvieron una media de 30 minutos y una desviación estándar de 4 minutos.  Estime el intervalo de confianza para el tiempo medio de entrega con un nivel de confianza del 95\%.
+
+ \question La biblioteca de una universidad necesita estimar el peso promedio (kg) de los libros de matemáticas. Tomó una muestra aleatoria de 8 libros los cuales tuvieron una media de 1.5 kg y una desviación estándar de 0.3 kg. Calcule el intervalo de confianza para el peso medio poblacional de los libros con un nivel de confianza del  95\%.  
+
+ 
+
+ \question El departamento de salud planea una encuesta para estimar la proporción de residentes vacunados contra la influenza. En un estudio piloto, el 72\% de una muestra mostró estar vacunado. Determine el tamaño de muestra necesario para estimar esta proporción con un margen de error del 3\% y un nivel de confianza del 95\%. Si no se tuviera el estudio piloto, ¿cuál sería el tamaño requerido?
+
+ \question Una tienda en línea desea calcular la tasa de devoluciones de un producto. En datos históricos, el 7\% de los pedidos se devolvían. Calcule el tamaño de muestra necesario para estimar la proporción de devoluciones con un margen de error del 4\% y un nivel de confianza del 90\%.  
+
+ \question Un partido político quiere determinar la proporción de votantes que apoyan a su candidato. En una encuesta previa, el 42\% mostró apoyo. ¿Qué tamaño de muestra se necesita para estimar esta proporción con un margen de error del 2\% y un nivel de confianza del 99\%? Si no se usa la encuesta previa, ¿cómo cambia el resultado?  
+
+ \question Un distrito escolar necesita medir el apoyo a una nueva política. En una encuesta informal, el 56\% de los padres estuvo de acuerdo. Calcule el tamaño de muestra requerido para estimar la proporción de apoyo con un margen de error del 5\% y confianza del 95\%. Además, justifique por qué se usa \( p = 0.5 \) si no hay datos preliminares.  
+
+ \question Un hospital planea un estudio para estimar la proporción de pacientes que mejoran con un tratamiento. En una prueba preliminar, el 69\% mostró mejoría.  Determine el tamaño de muestra necesario para un margen de error del 4\% y confianza del 95\%. Si se desea ser conservador (usar \( p = 0.5 \)), ¿cuál sería el tamaño?  
+
+
+ \question Un hospital quiere estimar el tiempo promedio (en minutos) que los pacientes esperan en urgencias. Por estudios previos, se sabe que la desviación estándar poblacional es \(\sigma = 8\) minutos. Calcule el tamaño de muestra necesario para estimar la media poblacional con un margen de error de 2 minutos y un nivel de confianza del 95\%.  
+
+ \question  Una compañía eléctrica analiza el consumo mensual promedio (en kWh) de sus clientes residenciales. La desviación estándar histórica es \(\sigma = 50\) kWh.   
+Determine el tamaño de muestra requerido para un margen de error de 10 kWh y un nivel de confianza del 90\%.  
+
+ \question Una empresa de logística necesita estimar el peso promedio (en kg) de los paquetes que transporta. Según datos anteriores, \(\sigma = 1.2\) kg. ¿Qué tamaño de muestra se necesita para un margen de error de 0.5 kg y un nivel de confianza del 99\%?  
+
+ \question Un consultor quiere estimar la duración promedio (en minutos) de las reuniones en una empresa. La desviación estándar registrada es \(\sigma = 5\) minutos.  Calcule el tamaño de muestra para un margen de error de 1.5 minutos y un nivel de confianza del 95\%.  
+
+ \question El ministerio de educación estudia el puntaje promedio (escala de 0 a 100) de un examen estandarizado. La desviación estándar histórica es \(\sigma = 12\). Determine el tamaño de muestra necesario para un margen de error de 3 puntos y un nivel de confianza del 90\%.  
+
+
+ \question Una empresa afirma que sus paquetes de cereal tienen un peso promedio de 500 g. Se sospecha que la máquina está descalibrada y subllenando. Se toma una muestra de 40 paquetes, obteniendo una media de 495 g. La desviación estándar poblacional es \( \sigma = 15 \) g. Con un nivel de de significancia \( \alpha = 0.05 \). 
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( Z \).  
+\item Determine la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un fabricante de baterías asegura que su producto dura en promedio 1200 horas. Un cliente alega que la duración es menor. Una muestra de 50 baterías muestra una media de 1180 horas. Se conoce \( \sigma = 100 \) horas.  Con un nnivel de significancia de \( \alpha = 0.01 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( Z \).  
+\item Determine la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un profesor afirma que el promedio de su clase en un examen nacional es diferente al promedio nacional de 75 puntos. Una muestra de 36 estudiantes de su clase tiene una media de 78. La desviación estándar poblacional es \( \sigma = 12 \).  Con un nivel de significancia: \( \alpha = 0.05 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( Z \).  
+\item Determine la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un laboratorio afirma que su medicamento reduce la presión arterial en 10 mmHg en promedio. Un estudio con 25 pacientes muestra una reducción promedio de 8 mmHg, con \( \sigma = 3 \) mmHg. Con un nivel de significancia \( \alpha = 0.05 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( Z \).  
+\item Determine la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Una máquina llena botellas de 500 mL. Una auditoría revela que, en 60 botellas, la media es 498 mL. Se sabe que \( \sigma = 5 \) mL.  Con un nivel de significancia: \( \alpha = 0.01 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( Z \).  
+\item Determine la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+
+ \question Un restaurante afirma que su tiempo promedio de entrega a domicilio es 25 minutos. Un cliente sospecha que es mayor. Se registran 15 entregas, obteniendo una media de 28 minutos y desviación estándar muestral \( s = 4 \) minutos. Con un nivel de significancia de \( \alpha = 0.05 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( t \).  
+\item Determine los grados de libertad y el valor crítico, además de la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un colegio afirma que el promedio de su clase en matemáticas es 80/100. Una muestra de 12 estudiantes tiene una media de 75 y \( s = 8 \). Con un nivel de significancia de \( \alpha = 0.01 \). 
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( t \).  
+\item Determine los grados de libertad y el valor crítico, además de la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un fabricante asegura que su auto consume 15 km/L. Una prueba con 10 autos muestra una media de 14 km/L y \( s = 1.2 \) km/L.  Con un nivel de significancia de \( \alpha = 0.05 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( t \).  
+\item Determine los grados de libertad y el valor crítico, además de la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un suplemento promete aumentar el nivel de hierro en la sangre en 2 mg/dL. En 8 pacientes, el aumento promedio fue 1.5 mg/dL con \( s = 0.6 \) mg/dL. Con un nivel de significancia de \( \alpha = 0.10 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( t \).  
+\item Determine los grados de libertad y el valor crítico, además de la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+ \question Un fabricante asegura que sus focos duran 10,000 horas. En 20 focos probados, la media fue 9,800 horas con \( s = 300 \) horas.  Con un nivel de significancia de \( \alpha = 0.05 \).  
+
+\begin{enumerate}[$1.$]
+\item Plantee las hipótesis nula y alternativa.  
+\item Calcule el estadístico \( t \).  
+\item Determine los grados de libertad y el valor crítico, además de la región crítica y la región de rechazo.  
+\item Concluya si se rechaza \( H_0 \).  
+\end{enumerate}
+
+
+ \question  La Secretaría de Educación quiere comparar las medias de los puntajes en matemáticas de dos colegios departamentales en el examen Saber 11. La desviación estándar de los puntajes de los estudiantes de grado 11 en estas pruebas es conocida a lo largo de los años. En el primer colegio, se tomó una muestra de 36 estudiantes, quienes obtuvieron un puntaje promedio de 66 puntos, con una desviación estándar de 8 puntos. En el segundo colegio, se tomó una muestra de 40 estudiantes, quienes obtuvieron un puntaje promedio de 56 puntos, con una desviación estándar de 12 puntos. ¿Existen diferencias significativas entre los resultados de los dos colegios? Use un nivel de significancia del 0.05.
+ 
+  \question  En una academia de conductores se quiere estudiar los tiempos de reacción de dos grupos de personas a un estímulo visual. Aunque no se conoce la desviación estándar de la población al aplicar los estímulos, se asume que son iguales para los dos grupos de estudio. Para el primer grupo, compuesto por 20 personas, el tiempo de reacción promedio fue de 4.2 milisegundos, con una desviación estándar de 1.1 milisegundos. Para el segundo grupo, compuesto por 15 personas, el tiempo de reacción promedio fue de 3.6 milisegundos, con una desviación estándar de 1.4 milisegundos. ¿Existe diferencia significativa entre las medias de tiempo de reacción al estímulo visual entre los dos grupos de estudio? Utilice un nivel de significancia de 0.04.
+ 
+\question  Se quiere estudiar los niveles de colesterol total en dos grupos de pacientes que siguen dos dietas distintas. No se conocen las desviaciones estándar de la población y se asume que para las dos dietas son distintas. En la dieta $A$ para 28 personas se obtuvo una media de 175 mg/dL con una desviación estándar de 12 mg/dL, mientras que en la dieta $B$ aplicada a 30 personas se obtuvo una media de 170 mg/dL con una desviación estándar de 8 mg/dL. ¿Es posible afirmar que la primera dieta reduce en menor cantidad el colesterol total en los pacientes? Use un nivel de significancia de 0.05.
+ 
+ \question Se quiere evaluar los niveles de estrés de un grupo de empleados antes y después de un programa implementado por el grupo de recursos humanos de la compañía. Para la evaluación se aplicó un test de 15 preguntas, con puntaje de 0 a 100, donde 0 indica ausencia de estrés y 100 indica una persona completamente estresada. Los resultados obtenidos para cada empleado antes y después del programa se muestran en la siguiente tabla:
+
+\begin{table}[H] \centering \begin{tabular}{|c|c|c|} \hline \textbf{Número del Empleado} & \textbf{Resultado antes} & \textbf{Resultado después} \\ \hline 1 & 80 & 79 \\ \hline 2 & 86 & 82 \\ \hline 3 & 77 & 81 \\ \hline 4 & 81 & 80 \\ \hline 5 & 78 & 77 \\ \hline 6 & 75 & 73 \\ \hline 7 & 81 & 78 \\ \hline 8 & 81 & 72 \\ \hline 9 & 78 & 80 \\ \hline 10 & 86 & 75 \\ \hline 11 & 75 & 78 \\ \hline 12 & 85 & 81 \\ \hline 13 & 82 & 77 \\ \hline 14 & 81 & 81 \\ \hline 15 & 84 & 77 \\ \hline 16 & 87 & 78 \\ \hline 17 & 85 & 73 \\ \hline 18 & 84 & 79 \\ \hline 19 & 84 & 75 \\ \hline 20 & 86 & 76 \\ \hline \end{tabular} \caption{Resultados antes y después de aplicar el programa de reducción del estrés.} \label{table:resultados} \end{table}
+
+¿Es posible afirmar que el nivel de estrés de los empleados se redujo después de aplicar el programa? Utilice un nivel de significancia de 0.05.
+
+ \question  Dos escuelas desean comparar el rendimiento académico en matemáticas de sus estudiantes. Se sabe que la desviación estándar poblacional de la calificación es \( \sigma_1 = 12 \) para la Escuela A y \( \sigma_2 = 10 \) para la Escuela B. Se toman muestras de \( n_1 = 50 \) alumnos de la Escuela A, obteniéndose una media muestral de \(82\), y de \( n_2 = 45 \) alumnos de la Escuela B, obteniéndose una media muestral de \(78\). Plantea y realiza la prueba de hipótesis para determinar si existe una diferencia significativa entre las medias, usando \(\alpha = 0.05\).
+
+ \question Un investigador desea comparar la efectividad de dos fertilizantes en el rendimiento de cultivos. Se conocen las desviaciones estándar poblacionales de la producción: \( \sigma_1 = 5 \) toneladas para el fertilizante A y \( \sigma_2 = 4 \) toneladas para el fertilizante B. Se aplican ambos en \( n_1 = 30 \) y \( n_2 = 30 \) parcelas respectivamente, obteniéndose medias muestrales de \(32\) toneladas y \(29\) toneladas. Con \(\alpha = 0.01\), realiza la prueba de hipótesis para determinar si existe diferencia en el rendimiento.
+
+ \question En un estudio médico se comparan dos tratamientos para reducir el tiempo de recuperación de una enfermedad. Se tiene:
+    \begin{itemize}
+        \item Tratamiento I: \( n_1 = 60 \), \( \bar{x}_1 = 10 \) días, \( \sigma_1 = 2 \) días.
+        \item Tratamiento II: \( n_2 = 60 \), \( \bar{x}_2 = 11 \) días, \( \sigma_2 = 2.5 \) días.
+    \end{itemize}
+    ¿Se puede concluir, al nivel de significación \(\alpha = 0.05\), que existe una diferencia en el tiempo de recuperación entre los dos tratamientos? Desarrolla el procedimiento completo.
+
+ \question Una compañía de electrónica quiere comparar la calidad de imagen de televisores de dos marcas. Se dispone de los siguientes datos:
+    \begin{itemize}
+        \item Marca X: \( n_1 = 40 \) televisores, media \( \bar{x}_1 = 890 \) puntos, y la desviación estándar poblacional \( \sigma_1 = 15 \) puntos.
+        \item Marca Y: \( n_2 = 35 \) televisores, media \( \bar{x}_2 = 870 \) puntos, y \( \sigma_2 = 12 \) puntos.
+    \end{itemize}
+    Con un nivel de significación \(\alpha = 0.05\), realiza la prueba de hipótesis para determinar si existe una diferencia significativa en la calidad de imagen entre ambas marcas.
+
+ \question Dos universidades desean comparar la duración promedio de la carrera. Se cuenta con la siguiente información:
+    \begin{itemize}
+        \item Universidad A: \( n_1 = 45 \), \( \bar{x}_1 = 4.2 \) años y \( s_1 = 0.5 \) años.
+        \item Universidad B: \( n_2 = 40 \), \( \bar{x}_2 = 4.5 \) años y \( s_2 = 0.6 \) años.
+    \end{itemize}
+    Plantea las hipótesis (\(H_0: \mu_1 - \mu_2 = 0\)) y, asumiendo varianzas iguales, realiza la prueba t para determinar si existe una diferencia significativa en la duración de la carrera, usando \(\alpha = 0.05\).
+    
+ \question   Un investigador desea comparar el efecto de dos dietas en la reducción del peso. Se han obtenido los siguientes datos:
+    \begin{itemize}
+        \item Dieta A: \( n_1 = 30 \), \( \bar{x}_1 = 5.0 \) kg de pérdida y \( s_1 = 1.2 \) kg.
+        \item Dieta B: \( n_2 = 30 \), \( \bar{x}_2 = 4.2 \) kg de pérdida y \( s_2 = 1.0 \) kg.
+    \end{itemize}
+    Con un nivel de significación \(\alpha = 0.01\), realiza la prueba de hipótesis para determinar si existe diferencia en la pérdida de peso medio entre las dos dietas.
+    
+ \question  En un estudio sobre el rendimiento laboral, se comparan dos grupos de empleados:
+    \begin{itemize}
+        \item Grupo 1: \( n_1 = 50 \), \( \bar{x}_1 = 80 \) puntos y \( s_1 = 5 \) puntos.
+        \item Grupo 2: \( n_2 = 45 \), \( \bar{x}_2 = 78 \) puntos y \( s_2 = 6 \) puntos.
+    \end{itemize}
+    Realiza la prueba de hipótesis (bilateral) con \(\alpha = 0.05\) para determinar si existe una diferencia en el rendimiento laboral entre ambos grupos.
+    
+ \question   Una empresa quiere comparar la satisfacción del cliente entre dos de sus centros de servicio. Los datos recolectados son:
+    \begin{itemize}
+        \item Centro 1: \( n_1 = 35 \), \( \bar{x}_1 = 8.3 \) (en escala de 1 a 10) y \( s_1 = 0.8 \).
+        \item Centro 2: \( n_2 = 40 \), \( \bar{x}_2 = 7.9 \) y \( s_2 = 1.0 \).
+    \end{itemize}
+    Usando \(\alpha = 0.05\), plantea y realiza la prueba de hipótesis para determinar si hay diferencia significativa en la satisfacción de los clientes entre los dos centros.
+
+ \question  Se desea comparar la proporción de estudiantes que aprueban un examen en dos universidades. En la Universidad A se encuestó a \( n_1 = 200 \) estudiantes, de los cuales \( x_1 = 150 \) aprobaron; en la Universidad B se encuestó a \( n_2 = 180 \) estudiantes, con \( x_2 = 120 \) aprobados. Plantea las hipótesis y realiza la prueba para determinar si existe una diferencia en las proporciones de aprobación, utilizando \(\alpha = 0.05\).
+    
+   \question  Una empresa quiere comparar la efectividad de dos campañas publicitarias. En la campaña A, de \( n_1 = 250 \) clientes, \( x_1 = 80 \) realizaron una compra. En la campaña B, de \( n_2 = 300 \) clientes, \( x_2 = 105 \) realizaron una compra. Con \(\alpha = 0.01\), plantea y realiza la prueba de hipótesis para determinar si hay diferencia significativa en las proporciones de clientes que compran.
+    
+     \question
+    En un estudio se investiga la preferencia por el transporte público en dos ciudades. En la Ciudad X se encuestaron \( n_1 = 150 \) personas, de las cuales \( x_1 = 75 \) prefieren el transporte público. En la Ciudad Y se encuestaron \( n_2 = 200 \) personas, de las cuales \( x_2 = 110 \) expresaron esa preferencia. Plantea y realiza la prueba de hipótesis con \(\alpha = 0.05\) para determinar si existe una diferencia en las proporciones.
+    
+     \question
+    Un político desea analizar la intención de voto en dos regiones. En la Región 1 se encuestaron \( n_1 = 300 \) personas y \( x_1 = 180 \) manifestaron su intención de votar por el candidato; en la Región 2 se encuestaron \( n_2 = 280 \) personas y \( x_2 = 140 \) expresaron la misma intención. Con \(\alpha = 0.05\), plantea y realiza la prueba de hipótesis para determinar si la proporción de intención de voto difiere entre las dos regiones.
+
+
+ \question Dos clases de un mismo curso se evaluaron para comparar sus promedios. Se tienen los siguientes datos:
+    \begin{itemize}
+        \item Clase A: \( n_1 = 30 \), \(\bar{x}_1 = 85\), \( s_1 = 5 \).
+        \item Clase B: \( n_2 = 28 \), \(\bar{x}_2 = 80\), \( s_2 = 6 \).
+    \end{itemize}
+    Plantea las hipótesis \(H_0: \mu_1 - \mu_2 = 0\) versus \(H_1: \mu_1 - \mu_2 \neq 0\) y realiza la prueba t conjunta (asumiendo varianzas iguales) utilizando un nivel de significación \(\alpha = 0.05\).
+
+ \question En un estudio se quiere comparar el rendimiento de dos máquinas de etiquetado. Los datos son:
+    \begin{itemize}
+        \item Máquina 1: \( n_1 = 25 \), \(\bar{x}_1 = 120\) etiquetas/minuto, \( s_1 = 10 \).
+        \item Máquina 2: \( n_2 = 25 \), \(\bar{x}_2 = 115\) etiquetas/minuto, \( s_2 = 8 \).
+    \end{itemize}
+    Formula las hipótesis y aplica la prueba t conjunta (asumiendo varianzas iguales) al nivel \(\alpha = 0.05\) para determinar si existe una diferencia significativa en la producción media.
+
+ \question   Un investigador examina el efecto de dos tratamientos en la reducción del colesterol. Se obtienen los siguientes datos:
+    \begin{itemize}
+        \item Tratamiento A: \( n_1 = 40 \), \(\bar{x}_1 = 190\) mg/dL, \( s_1 = 15 \).
+        \item Tratamiento B: \( n_2 = 35 \), \(\bar{x}_2 = 200\) mg/dL, \( s_2 = 20 \).
+    \end{itemize}
+    Plantea las hipótesis \(H_0: \mu_1 - \mu_2 = 0\) versus \(H_1: \mu_1 - \mu_2 \neq 0\) y realiza la prueba t conjunta (varianzas iguales) con un nivel de significación \(\alpha = 0.05\) para evaluar la diferencia de medias de colesterol.
+
+ \question   Una empresa desea comparar los salarios promedio entre dos departamentos. Los datos recolectados son:
+    \begin{itemize}
+        \item Departamento A: \( n_1 = 50 \), \(\bar{x}_1 = 1500\) USD, \( s_1 = 200\) USD.
+        \item Departamento B: \( n_2 = 45 \), \(\bar{x}_2 = 1400\) USD, \( s_2 = 180\) USD.
+    \end{itemize}
+    Plantea las hipótesis \(H_0: \mu_1 - \mu_2 = 0\) versus \(H_1: \mu_1 - \mu_2 \neq 0\) y, usando la prueba t conjunta (asumiendo igualdad de varianzas), realiza la prueba al nivel \(\alpha = 0.05\) para determinar si existe una diferencia estadísticamente significativa entre los salarios.
+
+ \question El departamento de marketing desea evaluar la efectividad de dos campañas publicitarias. Se obtuvieron los siguientes datos:
+    \begin{itemize}
+        \item Campaña A: \( n_1 = 35 \), \(\bar{x}_1 = 120\) clientes, \( s_1 = 15 \).
+        \item Campaña B: \( n_2 = 30 \), \(\bar{x}_2 = 110\) clientes, \( s_2 = 20 \).
+    \end{itemize}
+    Plantea las hipótesis \(H_0: \mu_1 - \mu_2 = 0\) y \(H_1: \mu_1 - \mu_2 \neq 0\), y realiza la prueba t de Welch con \(\alpha = 0.05\) para comparar las medias.
+    
+ \question  Se desea comparar las calificaciones promedio de dos grupos de estudiantes sometidos a diferentes métodos de enseñanza. Los datos son:
+    \begin{itemize}
+        \item Grupo A: \( n_1 = 40 \), \(\bar{x}_1 = 78\), \( s_1 = 8 \).
+        \item Grupo B: \( n_2 = 38 \), \(\bar{x}_2 = 74\), \( s_2 = 10 \).
+    \end{itemize}
+    Formula y realiza la prueba de hipótesis usando el test t de Welch para determinar si existe una diferencia significativa entre las medias, utilizando \(\alpha = 0.05\).
+    
+ \question  En un estudio sobre tratamientos médicos, se comparan dos terapias para reducir la presión arterial. Se han recolectado los siguientes datos:
+    \begin{itemize}
+        \item Terapia 1: \( n_1 = 45 \), \(\bar{x}_1 = 130\) mmHg, \( s_1 = 12 \) mmHg.
+        \item Terapia 2: \( n_2 = 40 \), \(\bar{x}_2 = 125\) mmHg, \( s_2 = 15 \) mmHg.
+    \end{itemize}
+    Establece las hipótesis \(H_0: \mu_1 - \mu_2 = 0\) y \(H_1: \mu_1 - \mu_2 \neq 0\), y aplica el test t de Welch con \(\alpha = 0.05\) para evaluar la diferencia entre las terapias.
+    
+ \question  Una empresa realiza una comparación de la satisfacción del cliente en dos regiones. Los resultados obtenidos son:
+    \begin{itemize}
+        \item Región A: \( n_1 = 60 \), \(\bar{x}_1 = 8.5\) (en una escala de 1 a 10), \( s_1 = 0.9 \).
+        \item Región B: \( n_2 = 55 \), \(\bar{x}_2 = 8.0\), \( s_2 = 1.1 \).
+    \end{itemize}
+    Plantea las hipótesis \(H_0: \mu_A - \mu_B = 0\) y \(H_1: \mu_A - \mu_B \neq 0\). Aplica el test t de Welch con \(\alpha = 0.05\) para determinar si existe una diferencia significativa en la satisfacción del cliente.
+
+ \question   Un investigador desea evaluar la efectividad de un programa de capacitación en el desempeño de los empleados. Se midió el desempeño de 30 empleados antes y después de la capacitación. Se obtuvo que la diferencia (después - antes) tiene una media de \(\bar{d} = 5\) puntos y una desviación estándar \(s_d = 3\) puntos. Plantea las siguientes hipótesis:
+    \[
+    H_0: \mu_d = 0 \quad \text{vs} \quad H_1: \mu_d \neq 0,
+    \]
+    y realiza la prueba t pareada con un nivel de significación \(\alpha = 0.05\).
+
+ \question  En un estudio sobre hábitos alimenticios se analizó el consumo de verduras de 25 personas antes y después de una intervención nutricional. Se halló que la diferencia en el consumo diario (después - antes) tiene una media de \(\bar{d} = 0.8\) porciones y una desviación estándar \(s_d = 0.6\) porciones. Plantea las hipótesis:
+    \[
+    H_0: \mu_d = 0 \quad \text{vs} \quad H_1: \mu_d \neq 0,
+    \]
+    y aplica la prueba t pareada utilizando un nivel de significación \(\alpha = 0.01\) para determinar si la intervención tuvo un efecto significativo.
+
+ \question   Un médico mide la presión arterial sistólica de 40 pacientes antes y después de administrar un nuevo medicamento. Se observó que la diferencia (después - antes) tiene una media de \(\bar{d} = -10\) mmHg y una desviación estándar \(s_d = 8\) mmHg. Plantea las hipótesis:
+    \[
+    H_0: \mu_d = 0 \quad \text{vs} \quad H_1: \mu_d \neq 0,
+    \]
+    y realiza la prueba t pareada con un nivel de significación \(\alpha = 0.05\) para evaluar la efectividad del medicamento.
+
+ \question  Se implementó un nuevo método de enseñanza en una clase de 20 estudiantes para evaluar su impacto en las calificaciones. Se obtuvieron las calificaciones antes y después de aplicar el método. La diferencia (después - antes) tiene una media de \(\bar{d} = 5\) puntos y una desviación estándar \(s_d = 4\) puntos. Plantea las hipótesis:
+    \[
+    H_0: \mu_d = 0 \quad \text{vs} \quad H_1: \mu_d \neq 0,
+    \]
+    y utiliza la prueba t pareada con un nivel de significación \(\alpha = 0.05\) para determinar si existe una mejora significativa en las calificaciones.
+
+
+
+
+
+ \question  Un investigador desea comparar el tiempo de reacción de tres grupos de personas sometidos a diferentes estímulos visuales. Se registraron los siguientes tiempos (en milisegundos):
+    \begin{itemize}
+        \item Grupo 1 (\(n_1 = 10\)): 250, 260, 245, 255, 248, 252, 258, 261, 249, 257.
+        \item Grupo 2 (\(n_2 = 10\)): 265, 270, 260, 275, 268, 267, 272, 269, 271, 266.
+        \item Grupo 3 (\(n_3 = 10\)): 240, 235, 242, 238, 236, 239, 241, 237, 243, 240.
+    \end{itemize}
+    Realiza la prueba ANOVA de una vía con un nivel de significación \(\alpha = 0.05\) para determinar si existen diferencias significativas en los tiempos de reacción entre los tres grupos.
+ \question En un estudio sobre rendimiento académico se compararon las calificaciones finales de estudiantes asignados a tres métodos de enseñanza. Las calificaciones (sobre 100) son:
+    \begin{itemize}
+        \item Método A (\(n_A = 12\)): 78, 80, 76, 82, 79, 81, 77, 80, 83, 79, 78, 80.
+        \item Método B (\(n_B = 12\)): 85, 88, 84, 87, 86, 89, 90, 85, 87, 88, 86, 87.
+        \item Método C (\(n_C = 12\)): 70, 72, 68, 71, 69, 73, 70, 72, 71, 70, 69, 71.
+    \end{itemize}
+    Realiza la prueba ANOVA de una vía con \(\alpha = 0.01\) para determinar si existen diferencias significativas entre los métodos de enseñanza.
+    
+  \question  Se desea evaluar la eficacia de cuatro tipos de fertilizantes sobre el crecimiento de plantas. Las alturas (en cm) de las plantas, medidas al cabo de un mes, son:
+    \begin{itemize}
+        \item Fertilizante 1 (\(n_1 = 8\)): 15, 16, 14, 17, 15, 16, 14, 15.
+        \item Fertilizante 2 (\(n_2 = 8\)): 18, 17, 19, 18, 17, 20, 19, 18.
+        \item Fertilizante 3 (\(n_3 = 8\)): 16, 15, 16, 15, 16, 15, 16, 15.
+        \item Fertilizante 4 (\(n_4 = 8\)): 20, 21, 19, 20, 22, 21, 20, 19.
+    \end{itemize}
+    Realiza la prueba ANOVA de una vía al nivel \(\alpha = 0.05\) para analizar si existen diferencias significativas en el crecimiento de las plantas entre los diferentes fertilizantes.
+    
+ \question Un laboratorio quiere comparar la concentración de un compuesto en soluciones preparadas mediante tres técnicas diferentes. Las concentraciones obtenidas (en mg/L) en 9 réplicas son:
+    \begin{itemize}
+        \item Técnica 1 (\(n_1 = 9\)): 30, 32, 31, 29, 30, 33, 32, 31, 30.
+        \item Técnica 2 (\(n_2 = 9\)): 35, 36, 34, 35, 37, 36, 34, 35, 36.
+        \item Técnica 3 (\(n_3 = 9\)): 28, 27, 29, 28, 30, 29, 28, 27, 28.
+    \end{itemize}
+    Plantea y realiza la prueba ANOVA de una vía con \(\alpha = 0.05\) para identificar si alguna de las técnicas produce concentraciones significativamente diferentes.
+
+
+
+ \question En un experimento se evaluó el efecto de cuatro tratamientos de fertilizantes (A, B, C y D) sobre el crecimiento de plantas. Se recogieron las siguientes alturas (en cm) de las plantas:
+    \begin{itemize}
+        \item Tratamiento A (\(n=10\)): 20, 22, 19, 21, 20, 23, 22, 21, 20, 22.
+        \item Tratamiento B (\(n=10\)): 25, 24, 26, 27, 25, 26, 24, 27, 26, 25.
+        \item Tratamiento C (\(n=10\)): 22, 23, 21, 22, 21, 23, 22, 21, 22, 23.
+        \item Tratamiento D (\(n=10\)): 28, 29, 27, 30, 29, 28, 29, 30, 28, 29.
+    \end{itemize}
+    Primero, realiza una prueba ANOVA a un nivel de significación \(\alpha = 0.05\) para determinar si existen diferencias significativas entre las medias de los tratamientos. Si se rechaza la hipótesis nula, aplica la prueba de Tukey para identificar cuáles tratamientos difieren entre sí.
+
+ \question  Se estudió el efecto de tres tratamientos sobre la presión arterial (en mmHg) en un grupo de pacientes. Se dividieron aleatoriamente en tres grupos y se obtuvieron las siguientes mediciones:
+    \begin{itemize}
+        \item Tratamiento X (\(n=12\)): 130, 128, 132, 131, 129, 130, 132, 133, 129, 130, 128, 131.
+        \item Tratamiento Y (\(n=12\)): 135, 137, 136, 134, 138, 137, 136, 139, 135, 137, 136, 135.
+        \item Tratamiento Z (\(n=12\)): 125, 127, 124, 126, 125, 126, 124, 125, 127, 125, 126, 124.
+    \end{itemize}
+    Realiza la prueba ANOVA con \(\alpha = 0.05\) para evaluar si existen diferencias en las medias de presión arterial entre los tratamientos. De encontrar resultados significativos, utiliza la prueba de Tukey para determinar cuáles pares de tratamientos presentan diferencias significativas.
+
+ \question  Un investigador comparó tres métodos de enseñanza (Método A, Método B y Método C) para evaluar su efecto en las calificaciones de un examen (puntaje sobre 100). Se obtuvieron los siguientes datos:
+    \begin{itemize}
+        \item Método A (\(n=15\)): 70, 72, 68, 71, 70, 69, 73, 72, 70, 71, 69, 70, 72, 71, 70.
+        \item Método B (\(n=15\)): 75, 76, 74, 75, 77, 76, 75, 74, 78, 76, 75, 77, 76, 75, 74.
+        \item Método C (\(n=15\)): 80, 82, 81, 83, 82, 80, 81, 82, 83, 81, 80, 82, 81, 80, 82.
+    \end{itemize}
+    Primero, ejecuta una prueba ANOVA a \(\alpha = 0.05\) para determinar si existen diferencias significativas en las calificaciones medias entre los métodos de enseñanza. Si se detectan diferencias, aplica la prueba post-hoc de Tukey para identificar específicamente qué métodos son significativamente diferentes entre sí.
+
+ \question   En un proceso de fabricación se evaluó el efecto de cuatro condiciones de procesamiento sobre la resistencia a la tracción de un material (medida en MPa). Las mediciones obtenidas fueron:
+    \begin{itemize}
+        \item Condición 1 (\(n=10\)): 300, 305, 298, 302, 304, 300, 303, 301, 299, 302.
+        \item Condición 2 (\(n=10\)): 310, 312, 311, 313, 310, 312, 311, 314, 312, 310.
+        \item Condición 3 (\(n=10\)): 295, 297, 296, 295, 298, 297, 296, 295, 297, 296.
+        \item Condición 4 (\(n=10\)): 320, 322, 321, 323, 320, 322, 321, 323, 322, 320.
+    \end{itemize}
+    Realiza una prueba ANOVA con un nivel de significación \(\alpha = 0.05\) para evaluar si existen diferencias en las medias de resistencia entre las condiciones de procesamiento. En caso afirmativo, aplica la prueba de Tukey para identificar cuáles condiciones difieren entre sí.
+
+\end{questions}
+
+\end{document}
